@@ -57,3 +57,4 @@ C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg
 C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\obj\Debug\erronka_2mg3_app.tpvPantaila.resources
 C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\obj\Debug\erronka_2mg3_app.cocinaPantalla.resources
 C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\obj\Debug\erronka_2mg3_app.adminPantalla.resources
+C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\bin\Debug\edaria\edari.hbm.xml

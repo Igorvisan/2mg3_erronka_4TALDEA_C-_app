@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.userNameLabel = new System.Windows.Forms.Label();
             this.edariakBox = new System.Windows.Forms.GroupBox();
+            this.edari8 = new System.Windows.Forms.Button();
+            this.edari7 = new System.Windows.Forms.Button();
             this.edari6 = new System.Windows.Forms.Button();
             this.edari5 = new System.Windows.Forms.Button();
             this.edari4 = new System.Windows.Forms.Button();
@@ -38,8 +40,6 @@
             this.edari3 = new System.Windows.Forms.Button();
             this.edari2 = new System.Windows.Forms.Button();
             this.edari1 = new System.Windows.Forms.Button();
-            this.edari7 = new System.Windows.Forms.Button();
-            this.edari8 = new System.Windows.Forms.Button();
             this.edariakBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +81,24 @@
             this.edariakBox.Size = new System.Drawing.Size(912, 502);
             this.edariakBox.TabIndex = 2;
             this.edariakBox.TabStop = false;
+            // 
+            // edari8
+            // 
+            this.edari8.Location = new System.Drawing.Point(596, 316);
+            this.edari8.Name = "edari8";
+            this.edari8.Size = new System.Drawing.Size(171, 51);
+            this.edari8.TabIndex = 8;
+            this.edari8.Text = "Agua con gas";
+            this.edari8.UseVisualStyleBackColor = true;
+            // 
+            // edari7
+            // 
+            this.edari7.Location = new System.Drawing.Point(168, 316);
+            this.edari7.Name = "edari7";
+            this.edari7.Size = new System.Drawing.Size(171, 51);
+            this.edari7.TabIndex = 7;
+            this.edari7.Text = "Kas Limon";
+            this.edari7.UseVisualStyleBackColor = true;
             // 
             // edari6
             // 
@@ -144,24 +162,7 @@
             this.edari1.TabIndex = 0;
             this.edari1.Text = "Cocacola";
             this.edari1.UseVisualStyleBackColor = true;
-            // 
-            // edari7
-            // 
-            this.edari7.Location = new System.Drawing.Point(168, 316);
-            this.edari7.Name = "edari7";
-            this.edari7.Size = new System.Drawing.Size(171, 51);
-            this.edari7.TabIndex = 7;
-            this.edari7.Text = "Kas Limon";
-            this.edari7.UseVisualStyleBackColor = true;
-            // 
-            // edari8
-            // 
-            this.edari8.Location = new System.Drawing.Point(596, 316);
-            this.edari8.Name = "edari8";
-            this.edari8.Size = new System.Drawing.Size(171, 51);
-            this.edari8.TabIndex = 8;
-            this.edari8.Text = "Agua con gas";
-            this.edari8.UseVisualStyleBackColor = true;
+            this.edari1.Click += new System.EventHandler(this.edari1_Click);
             // 
             // tpvPantaila
             // 
