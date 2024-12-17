@@ -35,7 +35,7 @@ namespace erronka_2mg3_app
             Region rg = new Region(gp);
             profilePicture.Region = rg;
 
-            logoPicture.SizeMode = PictureBoxSizeMode.StretchImage;   
+            logoPicture.SizeMode = PictureBoxSizeMode.StretchImage;
 
             pasahitzaText.PasswordChar = '*';
         }
