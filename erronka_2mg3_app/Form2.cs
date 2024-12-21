@@ -49,53 +49,101 @@ namespace erronka_2mg3_app
 
         }
 
-        private void anyButtonClick(object sender, EventArgs e)
+        private void edari1_Click(object sender, EventArgs e)
         {
-            Button clickedButton = sender as Button;
-
-            if (clickedButton != null)
-            {
-                string buttonText = clickedButton.Text;
-                MessageBox.Show($"Botón presionado: {buttonText}");
-
-            }
+            string bebida = edari1.Text;
+            anyButtonClick(bebida);
         }
 
-        private void edari1_Click(object sender, EventArgs e)
+        private void edari2_Click(object sender, EventArgs e)
+        {
+            string bebida = edari2.Text;
+            anyButtonClick(bebida);
+        }
+
+        private void edari3_Click(object sender, EventArgs e)
+        {
+            string bebida = edari3.Text;
+            anyButtonClick(bebida);
+        }
+
+        private void edari4_Click(object sender, EventArgs e)
+        {
+            string bebida = edari4.Text;
+            anyButtonClick(bebida);
+        }
+
+        private void edari5_Click(object sender, EventArgs e)
+        {
+            string bebida = edari5.Text;
+            anyButtonClick(bebida);
+        }
+
+        private void edari6_Click(object sender, EventArgs e)
+        {
+            string bebida = edari6.Text;
+            anyButtonClick(bebida);
+        }
+
+        private void edari7_Click(object sender, EventArgs e)
+        {
+            string bebida = edari7.Text;
+            anyButtonClick(bebida);
+        }
+
+        private void edari8_Click(object sender, EventArgs e)
+        {
+            string bebida = edari8.Text;
+            anyButtonClick(bebida);
+        }
+
+        private void anyButtonClick(string buttonText)
         {
             miConfiguracion = new NHibernate.Cfg.Configuration();
             miConfiguracion.Configure();
             mySessionFactory = miConfiguracion.BuildSessionFactory();
             mySession = mySessionFactory.OpenSession();
 
-            using (var transaccion = mySession.BeginTransaction()) {
-
+            using (var transaccion = mySession.BeginTransaction())
+            {
                 try
                 {
                     string hql = "SELECT e.Izena FROM edariaMapping e WHERE e.Izena = :izenaParam";
-                    string edaria = edari1.Text;
+
+                    string edaria = buttonText;
+
                     var consulta = mySession.CreateQuery(hql);
                     consulta.SetParameter("izenaParam", edaria);
+
                     var resultado = consulta.UniqueResult<string>();
 
-                    if (resultado != null && resultado.Equals("Cocacola"))
+                    if (resultado != null && resultado.Equals(buttonText))
                     {
-                        MessageBox.Show("Has escogido la bebida", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);  
+                        transaccion.Commit();
+                        MessageBox.Show($"Has escogido {buttonText}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                     }
                     else
                     {
-                        MessageBox.Show("No han encontrado resultados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se ha podido encontrar esa bebida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
-                    transaccion.Commit();
                 }
-                catch (Exception ex) { 
-                    MessageBox.Show($"No se ha podido realizar la operacion: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (Exception ex)
+                {
                     transaccion.Rollback();
+                    MessageBox.Show($"No se ha podido completar la operacion: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
+        }
+
+        private void hurrengoBotoia_Click(object sender, EventArgs e)
+        {
+            lehen_platera lehen_Platera = new lehen_platera(nombreUsuario);
+            lehen_Platera.Show();
+            this.Hide();
         }
     }
 }

@@ -76,7 +76,7 @@
             this.edariakBox.Controls.Add(this.edari3);
             this.edariakBox.Controls.Add(this.edari2);
             this.edariakBox.Controls.Add(this.edari1);
-            this.edariakBox.Location = new System.Drawing.Point(244, 65);
+            this.edariakBox.Location = new System.Drawing.Point(241, 85);
             this.edariakBox.Name = "edariakBox";
             this.edariakBox.Size = new System.Drawing.Size(912, 502);
             this.edariakBox.TabIndex = 2;
@@ -90,6 +90,7 @@
             this.edari8.TabIndex = 8;
             this.edari8.Text = "Agua con gas";
             this.edari8.UseVisualStyleBackColor = true;
+            this.edari8.Click += new System.EventHandler(this.edari8_Click);
             // 
             // edari7
             // 
@@ -99,6 +100,7 @@
             this.edari7.TabIndex = 7;
             this.edari7.Text = "Kas Limon";
             this.edari7.UseVisualStyleBackColor = true;
+            this.edari7.Click += new System.EventHandler(this.edari7_Click);
             // 
             // edari6
             // 
@@ -108,6 +110,7 @@
             this.edari6.TabIndex = 6;
             this.edari6.Text = "Vino Tinto";
             this.edari6.UseVisualStyleBackColor = true;
+            this.edari6.Click += new System.EventHandler(this.edari6_Click);
             // 
             // edari5
             // 
@@ -117,6 +120,7 @@
             this.edari5.TabIndex = 5;
             this.edari5.Text = "Vino Blanco";
             this.edari5.UseVisualStyleBackColor = true;
+            this.edari5.Click += new System.EventHandler(this.edari5_Click);
             // 
             // edari4
             // 
@@ -126,6 +130,7 @@
             this.edari4.TabIndex = 4;
             this.edari4.Text = "Agua";
             this.edari4.UseVisualStyleBackColor = true;
+            this.edari4.Click += new System.EventHandler(this.edari4_Click);
             // 
             // hurrengoBotoia
             // 
@@ -135,6 +140,7 @@
             this.hurrengoBotoia.TabIndex = 3;
             this.hurrengoBotoia.Text = "HURRENGOA";
             this.hurrengoBotoia.UseVisualStyleBackColor = true;
+            this.hurrengoBotoia.Click += new System.EventHandler(this.hurrengoBotoia_Click);
             // 
             // edari3
             // 
@@ -144,6 +150,7 @@
             this.edari3.TabIndex = 2;
             this.edari3.Text = "Kas Naranja";
             this.edari3.UseVisualStyleBackColor = true;
+            this.edari3.Click += new System.EventHandler(this.edari3_Click);
             // 
             // edari2
             // 
@@ -153,6 +160,7 @@
             this.edari2.TabIndex = 1;
             this.edari2.Text = "Cerveza";
             this.edari2.UseVisualStyleBackColor = true;
+            this.edari2.Click += new System.EventHandler(this.edari2_Click);
             // 
             // edari1
             // 
@@ -168,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1404, 727);
+            this.ClientSize = new System.Drawing.Size(1404, 731);
             this.Controls.Add(this.edariakBox);
             this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.label1);
