@@ -62,3 +62,4 @@ C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg
 C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\bin\Debug\platera\platera.hbm.xml
 C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\obj\Debug\erronka_2mg3_app.bigarren_platera.resources
 C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\obj\Debug\erronka_2mg3_app.postrePantalla.resources
+C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\obj\Debug\erronka_2mg3_app.nuevComanda.resources

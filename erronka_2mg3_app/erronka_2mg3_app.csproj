@@ -120,6 +120,12 @@
     <Compile Include="bigarren_platera.Designer.cs">
       <DependentUpon>bigarren_platera.cs</DependentUpon>
     </Compile>
+    <Compile Include="comenzarComanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comenzarComanda.Designer.cs">
+      <DependentUpon>comenzarComanda.cs</DependentUpon>
+    </Compile>
     <Compile Include="edaria\edariaMapping.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -152,6 +158,12 @@
     <Compile Include="lehen_platera.Designer.cs">
       <DependentUpon>lehen_platera.cs</DependentUpon>
     </Compile>
+    <Compile Include="mesaDePedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mesaDePedido.Designer.cs">
+      <DependentUpon>mesaDePedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="platera\platera.cs" />
     <Compile Include="postre.cs">
       <SubType>Form</SubType>
@@ -163,6 +175,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="bigarren_platera.resx">
       <DependentUpon>bigarren_platera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comenzarComanda.resx">
+      <DependentUpon>comenzarComanda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -178,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="lehen_platera.resx">
       <DependentUpon>lehen_platera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mesaDePedido.resx">
+      <DependentUpon>mesaDePedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="postre.resx">
       <DependentUpon>postre.cs</DependentUpon>

@@ -76,9 +76,10 @@ namespace erronka_2mg3_app
 
                         if (lanPostua.Equals("Camarero"))
                         {
-                            tpvPantaila tvpScreen = new tpvPantaila(nombreUsuario);
-                            tvpScreen.Show();
+                            nuevComanda empezarPedidosPantalla = new nuevComanda(nombreUsuario);
+                            empezarPedidosPantalla.Show();
                             this.Hide();
+                            
                         }else if (lanPostua.Equals("Cocina"))
                         {
                             cocinaPantalla cocinaScreen = new cocinaPantalla(nombreUsuario);

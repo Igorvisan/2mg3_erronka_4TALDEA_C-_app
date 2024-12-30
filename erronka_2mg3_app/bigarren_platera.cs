@@ -124,8 +124,8 @@ namespace erronka_2mg3_app
 
         private void hurrengoBotoia_Click(object sender, EventArgs e)
         {
-            bigarren_platera bigarren_Platera = new bigarren_platera(nombreUsuario);
-            bigarren_Platera.Show();
+            postrePantalla postreScreen = new postrePantalla(nombreUsuario);
+            postreScreen.Show();
             this.Hide();
         }
     }
