@@ -158,6 +158,7 @@
     <Compile Include="lehen_platera.Designer.cs">
       <DependentUpon>lehen_platera.cs</DependentUpon>
     </Compile>
+    <Compile Include="mahaia\mahaia.cs" />
     <Compile Include="mesaDePedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +236,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="platera\platera.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mahaia\mahai.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

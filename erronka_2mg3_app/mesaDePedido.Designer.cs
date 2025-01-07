@@ -61,7 +61,7 @@
             this.edariScreenButton.Name = "edariScreenButton";
             this.edariScreenButton.Size = new System.Drawing.Size(176, 59);
             this.edariScreenButton.TabIndex = 6;
-            this.edariScreenButton.Text = "button3";
+            this.edariScreenButton.Text = "CONFIRMAR";
             this.edariScreenButton.UseVisualStyleBackColor = true;
             // 
             // mesa6
@@ -70,8 +70,9 @@
             this.mesa6.Name = "mesa6";
             this.mesa6.Size = new System.Drawing.Size(176, 59);
             this.mesa6.TabIndex = 5;
-            this.mesa6.Text = "MESA 6";
+            this.mesa6.Text = "Mesa 6";
             this.mesa6.UseVisualStyleBackColor = true;
+            this.mesa6.Click += new System.EventHandler(this.mesa6_Click);
             // 
             // mesa5
             // 
@@ -79,8 +80,9 @@
             this.mesa5.Name = "mesa5";
             this.mesa5.Size = new System.Drawing.Size(176, 59);
             this.mesa5.TabIndex = 4;
-            this.mesa5.Text = "MESA 5";
+            this.mesa5.Text = "Mesa 5";
             this.mesa5.UseVisualStyleBackColor = true;
+            this.mesa5.Click += new System.EventHandler(this.mesa5_Click);
             // 
             // mesa4
             // 
@@ -88,8 +90,9 @@
             this.mesa4.Name = "mesa4";
             this.mesa4.Size = new System.Drawing.Size(176, 59);
             this.mesa4.TabIndex = 3;
-            this.mesa4.Text = "MESA 4";
+            this.mesa4.Text = "Mesa 4";
             this.mesa4.UseVisualStyleBackColor = true;
+            this.mesa4.Click += new System.EventHandler(this.mesa4_Click);
             // 
             // mesa3
             // 
@@ -97,8 +100,9 @@
             this.mesa3.Name = "mesa3";
             this.mesa3.Size = new System.Drawing.Size(176, 59);
             this.mesa3.TabIndex = 2;
-            this.mesa3.Text = "MESA 3";
+            this.mesa3.Text = "Mesa 3";
             this.mesa3.UseVisualStyleBackColor = true;
+            this.mesa3.Click += new System.EventHandler(this.mesa3_Click);
             // 
             // mesa2
             // 
@@ -106,8 +110,9 @@
             this.mesa2.Name = "mesa2";
             this.mesa2.Size = new System.Drawing.Size(176, 59);
             this.mesa2.TabIndex = 1;
-            this.mesa2.Text = "MESA 2";
+            this.mesa2.Text = "Mesa 2";
             this.mesa2.UseVisualStyleBackColor = true;
+            this.mesa2.Click += new System.EventHandler(this.mesa2_Click);
             // 
             // mesa1
             // 
@@ -115,7 +120,7 @@
             this.mesa1.Name = "mesa1";
             this.mesa1.Size = new System.Drawing.Size(176, 59);
             this.mesa1.TabIndex = 0;
-            this.mesa1.Text = "MESA 1";
+            this.mesa1.Text = "Mesa 1";
             this.mesa1.UseVisualStyleBackColor = true;
             this.mesa1.Click += new System.EventHandler(this.mesa1_Click);
             // 
