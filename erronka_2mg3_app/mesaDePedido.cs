@@ -103,21 +103,30 @@ namespace erronka_2mg3_app
 
                     if (resultados != null)
                     {
+                        string idHql = "SELECT mai.Id FROM mahaia mai WHERE mai.Izena = :izenaParam";
+                        var idSeleccionado = mySession.CreateQuery(idHql);
+
+                        idSeleccionado.SetParameter("izenaParam", textoMesa);
+                        var idMesa = idSeleccionado.UniqueResult<int>();
+
+                        if(idMesa != 0)
+                        {
+                            eskaeraGlobal.eskaeraDatua.Add(idMesa);
+                        }
                         transaccion.Commit();
-                        MessageBox.Show($"Has escogido la: {resultados}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
+                        string contenido = string.Join(",", eskaeraGlobal.eskaeraDatua.Cast<int>());
+                        MessageBox.Show($"El contenido del ArrayList es el siguiente: {contenido}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Has escogido la: {resultados} con ID {idMesa}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         MessageBox.Show("No se ha podido elegir esa mesa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
                     }
                 }
                 catch (Exception ex)
                 {
                     transaccion.Rollback();
                     MessageBox.Show($"Ha ocurrido un error durante la operacion", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
                 }
             }
         }

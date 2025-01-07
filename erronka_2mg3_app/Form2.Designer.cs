@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.userNameLabel = new System.Windows.Forms.Label();
             this.edariakBox = new System.Windows.Forms.GroupBox();
             this.edari8 = new System.Windows.Forms.Button();
             this.edari7 = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.edari3 = new System.Windows.Forms.Button();
             this.edari2 = new System.Windows.Forms.Button();
             this.edari1 = new System.Windows.Forms.Button();
+            this.userNameLabel = new System.Windows.Forms.Label();
             this.edariakBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,22 +48,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(659, 9);
+            this.label1.Location = new System.Drawing.Point(591, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 53);
             this.label1.TabIndex = 0;
             this.label1.Text = "TPV";
-            // 
-            // userNameLabel
-            // 
-            this.userNameLabel.AutoSize = true;
-            this.userNameLabel.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.ForeColor = System.Drawing.Color.White;
-            this.userNameLabel.Location = new System.Drawing.Point(1283, 9);
-            this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(109, 53);
-            this.userNameLabel.TabIndex = 1;
-            this.userNameLabel.Text = "Label2";
             // 
             // edariakBox
             // 
@@ -76,7 +65,7 @@
             this.edariakBox.Controls.Add(this.edari3);
             this.edariakBox.Controls.Add(this.edari2);
             this.edariakBox.Controls.Add(this.edari1);
-            this.edariakBox.Location = new System.Drawing.Point(241, 85);
+            this.edariakBox.Location = new System.Drawing.Point(191, 101);
             this.edariakBox.Name = "edariakBox";
             this.edariakBox.Size = new System.Drawing.Size(912, 502);
             this.edariakBox.TabIndex = 2;
@@ -84,7 +73,7 @@
             // 
             // edari8
             // 
-            this.edari8.Location = new System.Drawing.Point(596, 316);
+            this.edari8.Location = new System.Drawing.Point(584, 321);
             this.edari8.Name = "edari8";
             this.edari8.Size = new System.Drawing.Size(171, 51);
             this.edari8.TabIndex = 8;
@@ -94,7 +83,7 @@
             // 
             // edari7
             // 
-            this.edari7.Location = new System.Drawing.Point(168, 316);
+            this.edari7.Location = new System.Drawing.Point(156, 321);
             this.edari7.Name = "edari7";
             this.edari7.Size = new System.Drawing.Size(171, 51);
             this.edari7.TabIndex = 7;
@@ -104,7 +93,7 @@
             // 
             // edari6
             // 
-            this.edari6.Location = new System.Drawing.Point(596, 241);
+            this.edari6.Location = new System.Drawing.Point(584, 246);
             this.edari6.Name = "edari6";
             this.edari6.Size = new System.Drawing.Size(171, 51);
             this.edari6.TabIndex = 6;
@@ -114,7 +103,7 @@
             // 
             // edari5
             // 
-            this.edari5.Location = new System.Drawing.Point(596, 156);
+            this.edari5.Location = new System.Drawing.Point(584, 161);
             this.edari5.Name = "edari5";
             this.edari5.Size = new System.Drawing.Size(171, 51);
             this.edari5.TabIndex = 5;
@@ -124,7 +113,7 @@
             // 
             // edari4
             // 
-            this.edari4.Location = new System.Drawing.Point(596, 76);
+            this.edari4.Location = new System.Drawing.Point(584, 81);
             this.edari4.Name = "edari4";
             this.edari4.Size = new System.Drawing.Size(171, 51);
             this.edari4.TabIndex = 4;
@@ -134,7 +123,7 @@
             // 
             // hurrengoBotoia
             // 
-            this.hurrengoBotoia.Location = new System.Drawing.Point(384, 389);
+            this.hurrengoBotoia.Location = new System.Drawing.Point(372, 394);
             this.hurrengoBotoia.Name = "hurrengoBotoia";
             this.hurrengoBotoia.Size = new System.Drawing.Size(171, 51);
             this.hurrengoBotoia.TabIndex = 3;
@@ -144,7 +133,7 @@
             // 
             // edari3
             // 
-            this.edari3.Location = new System.Drawing.Point(168, 241);
+            this.edari3.Location = new System.Drawing.Point(156, 246);
             this.edari3.Name = "edari3";
             this.edari3.Size = new System.Drawing.Size(171, 51);
             this.edari3.TabIndex = 2;
@@ -154,7 +143,7 @@
             // 
             // edari2
             // 
-            this.edari2.Location = new System.Drawing.Point(168, 156);
+            this.edari2.Location = new System.Drawing.Point(156, 161);
             this.edari2.Name = "edari2";
             this.edari2.Size = new System.Drawing.Size(171, 51);
             this.edari2.TabIndex = 1;
@@ -164,7 +153,7 @@
             // 
             // edari1
             // 
-            this.edari1.Location = new System.Drawing.Point(168, 76);
+            this.edari1.Location = new System.Drawing.Point(156, 81);
             this.edari1.Name = "edari1";
             this.edari1.Size = new System.Drawing.Size(171, 51);
             this.edari1.TabIndex = 0;
@@ -172,13 +161,24 @@
             this.edari1.UseVisualStyleBackColor = true;
             this.edari1.Click += new System.EventHandler(this.edari1_Click);
             // 
+            // userNameLabel
+            // 
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameLabel.ForeColor = System.Drawing.Color.White;
+            this.userNameLabel.Location = new System.Drawing.Point(1205, 9);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(187, 53);
+            this.userNameLabel.TabIndex = 3;
+            this.userNameLabel.Text = "@userName";
+            // 
             // tpvPantaila
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1404, 731);
-            this.Controls.Add(this.edariakBox);
             this.Controls.Add(this.userNameLabel);
+            this.Controls.Add(this.edariakBox);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "tpvPantaila";
@@ -193,7 +193,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.GroupBox edariakBox;
         private System.Windows.Forms.Button edari1;
         private System.Windows.Forms.Button edari6;
@@ -204,5 +203,6 @@
         private System.Windows.Forms.Button edari2;
         private System.Windows.Forms.Button edari8;
         private System.Windows.Forms.Button edari7;
+        private System.Windows.Forms.Label userNameLabel;
     }
 }

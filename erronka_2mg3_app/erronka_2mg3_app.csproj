@@ -127,6 +127,7 @@
       <DependentUpon>comenzarComanda.cs</DependentUpon>
     </Compile>
     <Compile Include="edaria\edariaMapping.cs" />
+    <Compile Include="eskaeraGlobal.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
