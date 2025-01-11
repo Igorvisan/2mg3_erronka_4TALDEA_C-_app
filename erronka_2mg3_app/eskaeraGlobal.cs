@@ -9,6 +9,6 @@ namespace erronka_2mg3_app
 {
     public static class eskaeraGlobal
     {
-        public static ArrayList eskaeraDatua = new ArrayList();
+        public static Dictionary<string, object> EskaeraDatua = new Dictionary<string, object>();
     }
 }

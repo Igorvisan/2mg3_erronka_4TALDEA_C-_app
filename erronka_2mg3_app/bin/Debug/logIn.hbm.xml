@@ -14,5 +14,4 @@
 		<property name="Pasahitza" column="pasahitza" type="string"/>
 		<property name="LanPostua" column="lan_postua" type="string"/>
 	</class>
-
 </hibernate-mapping>

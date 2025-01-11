@@ -57,12 +57,13 @@
             // 
             // edariScreenButton
             // 
-            this.edariScreenButton.Location = new System.Drawing.Point(356, 394);
+            this.edariScreenButton.Location = new System.Drawing.Point(361, 393);
             this.edariScreenButton.Name = "edariScreenButton";
             this.edariScreenButton.Size = new System.Drawing.Size(176, 59);
             this.edariScreenButton.TabIndex = 6;
             this.edariScreenButton.Text = "CONFIRMAR";
             this.edariScreenButton.UseVisualStyleBackColor = true;
+            this.edariScreenButton.Click += new System.EventHandler(this.edariScreenButton_Click);
             // 
             // mesa6
             // 

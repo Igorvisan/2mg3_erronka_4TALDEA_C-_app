@@ -1,4 +1,5 @@
-﻿using Mysqlx;
+﻿using erronka_2mg3_app.eskaria;
+using Mysqlx;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.SqlCommand;
@@ -109,13 +110,17 @@ namespace erronka_2mg3_app
                         idSeleccionado.SetParameter("izenaParam", textoMesa);
                         var idMesa = idSeleccionado.UniqueResult<int>();
 
-                        if(idMesa != 0)
+                        if (idMesa != 0)
                         {
-                            eskaeraGlobal.eskaeraDatua.Add(idMesa);
+                            if (eskaeraGlobal.EskaeraDatua.ContainsKey("idMesa")){
+
+                                eskaeraGlobal.EskaeraDatua.Add("idMesa", idMesa);
+                            }
+                            else { 
+                                eskaeraGlobal.EskaeraDatua["idMesa"] = idMesa; 
+                            }
                         }
                         transaccion.Commit();
-                        string contenido = string.Join(",", eskaeraGlobal.eskaeraDatua.Cast<int>());
-                        MessageBox.Show($"El contenido del ArrayList es el siguiente: {contenido}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         MessageBox.Show($"Has escogido la: {resultados} con ID {idMesa}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -126,7 +131,56 @@ namespace erronka_2mg3_app
                 catch (Exception ex)
                 {
                     transaccion.Rollback();
-                    MessageBox.Show($"Ha ocurrido un error durante la operacion", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Ha ocurrido un error durante la operacion: {ex.Message}", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void edariScreenButton_Click(object sender, EventArgs e)
+        {
+            tpvPantaila tpvPantaila = new tpvPantaila(nombreUsuario);
+            confirmarElPedidoMesa();
+            tpvPantaila.Show();
+            this.Hide();
+        }
+
+        private void confirmarElPedidoMesa()
+        {
+            miConfiguracion = new NHibernate.Cfg.Configuration();
+            miConfiguracion.Configure();
+            mySessionFactory = miConfiguracion.BuildSessionFactory();
+
+
+
+            using (mySession = mySessionFactory.OpenSession())
+            using (ITransaction tx = mySession.BeginTransaction())
+            {
+                try
+                {
+                    if (eskaeraGlobal.EskaeraDatua.Count == 0)
+                    {
+                        MessageBox.Show("No has seleccionado ninguna mesa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        int langileId = (int)eskaeraGlobal.EskaeraDatua["idTrabajador"];
+                        int mahaiaId = (int)eskaeraGlobal.EskaeraDatua["idMesa"];
+
+                        var mahaia = mySession.Get<erronka_2mg3_app.mahaia.mahaia>(mahaiaId);
+                        var langilea = mySession.Get<erronka_2mg3_app.langileLogIn>(langileId);
+
+                        Eskaera eskaera = new Eskaera(mahaia, langilea, null, null, null);
+                        mySession.Save(eskaera);
+                        MessageBox.Show("Se ha guardado la mesa correctamente", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mySession.Flush();
+                        mySession.Clear();
+                        tx.Commit();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    tx.Rollback();
+                    MessageBox.Show($"Ha ocurrido un error durante la operacion: {ex.Message}", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

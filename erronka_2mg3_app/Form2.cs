@@ -145,5 +145,28 @@ namespace erronka_2mg3_app
             lehen_Platera.Show();
             this.Hide();
         }
+
+        private void plusButton_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(firstDrinkCount.Text);
+            
+            cantidadBebida++;
+
+            firstDrinkCount.Text = cantidadBebida.ToString();
+        }
+
+        private void lessButton_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(firstDrinkCount.Text);
+
+            if(cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            firstDrinkCount.Text = cantidadBebida.ToString();
+        }
     }
 }

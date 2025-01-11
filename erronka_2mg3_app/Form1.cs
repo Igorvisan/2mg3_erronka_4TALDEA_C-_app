@@ -71,8 +71,51 @@ namespace erronka_2mg3_app
                         string nombreUsuario = usuario.Izena;
                         string lanPostua = usuario.LanPostua;
 
-                        MessageBox.Show($"Bienvenido/a {nombreUsuario}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string idHql = "SELECT lan.Id FROM langileLogIn lan WHERE lan.Email = :emailParam AND lan.Pasahitza = :pasahitzaParam";
+
+                        var langileLoggeado = mySession.CreateQuery(idHql);
+
+                        langileLoggeado.SetParameter("emailParam", email);
+                        langileLoggeado.SetParameter("pasahitzaParam", pasahitza);
+
+                        var idTrabajador = langileLoggeado.UniqueResult<int>();
+
+                        if(idTrabajador != 0)
+                        {
+                            //Si no existe la clave "idTrabajador" la creamos y añadidos el id del trabajador
+                            if (!eskaeraGlobal.EskaeraDatua.ContainsKey("idTrabajador"))
+                            {
+                                eskaeraGlobal.EskaeraDatua.Add("idTrabajador", idTrabajador);
+                            }
+                            else
+                            {
+                                //Si existe la clave "idTrabajador" la actualizamos con el id del trabajador
+                                eskaeraGlobal.EskaeraDatua["idTrabajador"] = idTrabajador;
+                            }
+                        }
+
                         transaccion.Commit();
+                        if (eskaeraGlobal.EskaeraDatua.Count > 0) { 
+                            StringBuilder mensaje = new StringBuilder("El contenido del Dictionary es el siguiente:\n");
+                            foreach (var keyValor in eskaeraGlobal.EskaeraDatua) { 
+                                string clave = keyValor.Key;
+                                object valor = keyValor.Value;
+
+                                if (valor is List<int> lista) {
+                                    string listaValores = string.Join(",", lista);
+                                    mensaje.AppendLine($"{clave}: {listaValores}");
+                                }
+                                else
+                                {
+                                    mensaje.AppendLine($"{clave}: {valor}");
+                                }
+                            }
+                            MessageBox.Show(mensaje.ToString(), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else{
+                            MessageBox.Show("El Dictionary está vacío.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        MessageBox.Show($"Bienvenido/a {nombreUsuario}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         if (lanPostua.Equals("Camarero"))
                         {
