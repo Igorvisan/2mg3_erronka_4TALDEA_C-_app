@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace erronka_2mg3_app.edaria
 {
-    internal class edariaMapping
+    internal class Edaria
     {
         public virtual int Id { get; set; }
 
         public virtual string Izena { get; set; }    
+
+        public virtual double Prezioa { get; set; }
     }
 }

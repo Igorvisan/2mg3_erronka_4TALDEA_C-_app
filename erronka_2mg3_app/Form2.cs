@@ -1,4 +1,5 @@
 ﻿using erronka_2mg3_app.edaria;
+using erronka_2mg3_app.eskaria;
 using NHibernate;
 using NHibernate.Util;
 using System;
@@ -167,6 +168,13 @@ namespace erronka_2mg3_app
             cantidadBebida--;
 
             firstDrinkCount.Text = cantidadBebida.ToString();
+        }
+
+        private void addDrinkButton_Click(object sender, EventArgs e)
+        {
+            EdariaKudeaketa edariaKudeaketa = new EdariaKudeaketa(); 
+            
+            edariaKudeaketa.edariEskaeraEgin();
         }
     }
 }

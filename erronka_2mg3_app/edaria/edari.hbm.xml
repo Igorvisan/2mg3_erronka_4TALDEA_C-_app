@@ -4,7 +4,7 @@
                    namespace="erronka_2mg3_app.edaria">
 
 	<!-- more mapping info here -->
-	<class name="erronka_2mg3_app.edaria.edariaMapping" table="edaria">
+	<class name="erronka_2mg3_app.edaria.Edaria" table="edaria">
 		<id name="Id" column="id" type="int">
 			<generator class="identity" />
 		</id>

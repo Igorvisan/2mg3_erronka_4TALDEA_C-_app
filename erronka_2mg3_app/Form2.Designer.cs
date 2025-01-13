@@ -30,6 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.edariakBox = new System.Windows.Forms.GroupBox();
+            this.addDrinkButton = new System.Windows.Forms.Button();
+            this.firstDrinkCount = new System.Windows.Forms.Label();
+            this.lessButton = new System.Windows.Forms.Button();
+            this.plusButton = new System.Windows.Forms.Button();
             this.edari8 = new System.Windows.Forms.Button();
             this.edari7 = new System.Windows.Forms.Button();
             this.edari6 = new System.Windows.Forms.Button();
@@ -40,10 +44,6 @@
             this.edari2 = new System.Windows.Forms.Button();
             this.edari1 = new System.Windows.Forms.Button();
             this.userNameLabel = new System.Windows.Forms.Label();
-            this.plusButton = new System.Windows.Forms.Button();
-            this.lessButton = new System.Windows.Forms.Button();
-            this.firstDrinkCount = new System.Windows.Forms.Label();
-            this.addDrinkButton = new System.Windows.Forms.Button();
             this.edariakBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,47 @@
             this.edariakBox.Size = new System.Drawing.Size(912, 593);
             this.edariakBox.TabIndex = 2;
             this.edariakBox.TabStop = false;
+            // 
+            // addDrinkButton
+            // 
+            this.addDrinkButton.Location = new System.Drawing.Point(194, 119);
+            this.addDrinkButton.Name = "addDrinkButton";
+            this.addDrinkButton.Size = new System.Drawing.Size(102, 34);
+            this.addDrinkButton.TabIndex = 11;
+            this.addDrinkButton.Text = "AÑADIR";
+            this.addDrinkButton.UseVisualStyleBackColor = true;
+            this.addDrinkButton.Click += new System.EventHandler(this.addDrinkButton_Click);
+            // 
+            // firstDrinkCount
+            // 
+            this.firstDrinkCount.AutoSize = true;
+            this.firstDrinkCount.Font = new System.Drawing.Font("Myanmar Text", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstDrinkCount.ForeColor = System.Drawing.Color.White;
+            this.firstDrinkCount.Location = new System.Drawing.Point(228, 18);
+            this.firstDrinkCount.Name = "firstDrinkCount";
+            this.firstDrinkCount.Size = new System.Drawing.Size(30, 41);
+            this.firstDrinkCount.TabIndex = 4;
+            this.firstDrinkCount.Text = "0";
+            // 
+            // lessButton
+            // 
+            this.lessButton.Location = new System.Drawing.Point(103, 62);
+            this.lessButton.Name = "lessButton";
+            this.lessButton.Size = new System.Drawing.Size(47, 51);
+            this.lessButton.TabIndex = 10;
+            this.lessButton.Text = "-";
+            this.lessButton.UseVisualStyleBackColor = true;
+            this.lessButton.Click += new System.EventHandler(this.lessButton_Click);
+            // 
+            // plusButton
+            // 
+            this.plusButton.Location = new System.Drawing.Point(333, 62);
+            this.plusButton.Name = "plusButton";
+            this.plusButton.Size = new System.Drawing.Size(47, 51);
+            this.plusButton.TabIndex = 9;
+            this.plusButton.Text = "+";
+            this.plusButton.UseVisualStyleBackColor = true;
+            this.plusButton.Click += new System.EventHandler(this.plusButton_Click);
             // 
             // edari8
             // 
@@ -179,46 +220,6 @@
             this.userNameLabel.Size = new System.Drawing.Size(187, 53);
             this.userNameLabel.TabIndex = 3;
             this.userNameLabel.Text = "@userName";
-            // 
-            // plusButton
-            // 
-            this.plusButton.Location = new System.Drawing.Point(333, 62);
-            this.plusButton.Name = "plusButton";
-            this.plusButton.Size = new System.Drawing.Size(47, 51);
-            this.plusButton.TabIndex = 9;
-            this.plusButton.Text = "+";
-            this.plusButton.UseVisualStyleBackColor = true;
-            this.plusButton.Click += new System.EventHandler(this.plusButton_Click);
-            // 
-            // lessButton
-            // 
-            this.lessButton.Location = new System.Drawing.Point(103, 62);
-            this.lessButton.Name = "lessButton";
-            this.lessButton.Size = new System.Drawing.Size(47, 51);
-            this.lessButton.TabIndex = 10;
-            this.lessButton.Text = "-";
-            this.lessButton.UseVisualStyleBackColor = true;
-            this.lessButton.Click += new System.EventHandler(this.lessButton_Click);
-            // 
-            // firstDrinkCount
-            // 
-            this.firstDrinkCount.AutoSize = true;
-            this.firstDrinkCount.Font = new System.Drawing.Font("Myanmar Text", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstDrinkCount.ForeColor = System.Drawing.Color.White;
-            this.firstDrinkCount.Location = new System.Drawing.Point(228, 18);
-            this.firstDrinkCount.Name = "firstDrinkCount";
-            this.firstDrinkCount.Size = new System.Drawing.Size(30, 41);
-            this.firstDrinkCount.TabIndex = 4;
-            this.firstDrinkCount.Text = "0";
-            // 
-            // addDrinkButton
-            // 
-            this.addDrinkButton.Location = new System.Drawing.Point(194, 119);
-            this.addDrinkButton.Name = "addDrinkButton";
-            this.addDrinkButton.Size = new System.Drawing.Size(102, 34);
-            this.addDrinkButton.TabIndex = 11;
-            this.addDrinkButton.Text = "AÑADIR";
-            this.addDrinkButton.UseVisualStyleBackColor = true;
             // 
             // tpvPantaila
             // 

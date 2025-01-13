@@ -112,8 +112,8 @@ namespace erronka_2mg3_app
 
                         if (idMesa != 0)
                         {
-                            if (eskaeraGlobal.EskaeraDatua.ContainsKey("idMesa")){
-
+                            if (eskaeraGlobal.EskaeraDatua.ContainsKey("idMesa"))
+                            {
                                 eskaeraGlobal.EskaeraDatua.Add("idMesa", idMesa);
                             }
                             else { 
