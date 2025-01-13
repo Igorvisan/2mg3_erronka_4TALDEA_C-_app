@@ -172,9 +172,12 @@ namespace erronka_2mg3_app
 
         private void addDrinkButton_Click(object sender, EventArgs e)
         {
-            EdariaKudeaketa edariaKudeaketa = new EdariaKudeaketa(); 
-            
-            edariaKudeaketa.edariEskaeraEgin();
+            string primeraBebida = edari1.Text;
+            int kantitatea = Convert.ToInt32(firstDrinkCount.Text);
+            EdariaKudeaketa edariaKudeaketa = new EdariaKudeaketa();
+
+            edariaKudeaketa.eskariaGorde();
+            edariaKudeaketa.edariEskaeraEgin(kantitatea, primeraBebida);
         }
     }
 }

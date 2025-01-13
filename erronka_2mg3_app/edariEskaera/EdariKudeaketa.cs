@@ -16,7 +16,7 @@ namespace erronka_2mg3_app.eskaria
         private ISessionFactory mySessionFactory;
         private ISession mySession;
 
-        public void edariEskaeraEgin()
+        public void eskariaGorde()
         {
             miConfiguracion = new NHibernate.Cfg.Configuration();
             miConfiguracion.Configure();
@@ -39,8 +39,6 @@ namespace erronka_2mg3_app.eskaria
                         if (!eskaeraGlobal.EskaeraDatua.ContainsKey("idEskaera"))
                         {
                             eskaeraGlobal.EskaeraDatua.Add("idEskaera", idEskaera);
-
-
                         }
                         else
                         {
@@ -59,6 +57,51 @@ namespace erronka_2mg3_app.eskaria
                 {
                     transaccon.Rollback();
                     MessageBox.Show($"Errorea eskaera egiterakoan: {ex.Message}");
+                    return;
+                }
+            }
+        }
+
+        public void edariEskaeraEgin(int kantitatea, string edariIzenaButton)
+        {
+            miConfiguracion = new NHibernate.Cfg.Configuration();
+            miConfiguracion.Configure();
+            mySessionFactory = miConfiguracion.BuildSessionFactory();
+
+            using (mySession = mySessionFactory.OpenSession())
+            using (var transaccion = mySession.BeginTransaction())
+            {
+                try
+                {
+                    string edariaHql = "SELECT ed.Prezioa FROM Edaria ed WHERE ed.Izena = :izenaParam";
+                    var queryEdaria = mySession.CreateQuery(edariaHql);
+
+                    queryEdaria.SetParameter("izenaParam", edariIzenaButton);
+
+                    var edariPrezioa = queryEdaria.UniqueResult<double>();
+
+                    if (edariPrezioa != 0)
+                    {
+                        if (!eskaeraGlobal.EskaeraDatua.ContainsKey("edariPrezioa"))
+                        {
+                            eskaeraGlobal.EskaeraDatua.Add("edariPrezioa", edariPrezioa);
+
+                        }
+                        else
+                        {
+                            eskaeraGlobal.EskaeraDatua["edariPrezioa"] = edariPrezioa;
+                        }
+                        transaccion.Commit();
+                        MessageBox.Show($"Has escogido {edariIzenaButton} con un precio de {edariPrezioa}€", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha podido encontrar el precio de la bebida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                catch (Exception ex) {
+                    MessageBox.Show($"No se ha podido completar la operacion: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
