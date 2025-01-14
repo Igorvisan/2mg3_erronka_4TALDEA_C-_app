@@ -11,6 +11,7 @@
 		<!-- Los nombres de la propiedades deben de coincidir con los nombres de tu tabla de la base de datos en la propiedad column -->
 		<property name="Izena" column="izena" type="string"/>
 		<property name="PrestaketaDenbora" column="prestaketa_denbora" type="int"/>
+		<property name="Prezioa" column="prezioa" type="double"/>
 		<property name="PlaterMota" column="plater_mota" type="string"/>
 	</class>
 </hibernate-mapping>

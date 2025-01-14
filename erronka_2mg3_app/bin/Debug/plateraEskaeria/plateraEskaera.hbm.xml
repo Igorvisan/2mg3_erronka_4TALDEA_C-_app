@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="erronka_2mg3_app"
+                   namespace="erronka_2mg3_app.plateraEskaeria">
+
+	<!-- more mapping info here -->
+	<class name="erronka_2mg3_app.plateraEskaeria.plateraEskaria" table="platera_eskaera">
+		<id name="Id" column="id" type="int">
+			<generator class="identity" />
+		</id>
+		<!-- Los nombres de la propiedades deben de coincidir con los nombres de tu tabla de la base de datos en la propiedad column -->
+		<many-to-one name="EskaeraId" column="eskaera_id" class="erronka_2mg3_app.eskaria.Eskaera" not-null="true"/>
+		<many-to-one name="PlateraId" column="platera_id" class="erronka_2mg3_app.platera.platera" not-null="true"/>
+
+		<property name="Prezioa" column="prezioa" type="double"/>
+		<property name="Kantitatea" column="kantiatea" type="int"/>
+		<property name="EskaeraOrdua" column="eskaera_ordua" type="DateTime"/>
+		<property name="ZerbitzatzekoOrdua" column="zerbitzatzeko_ordua" type="DateTime"/>
+	</class>
+</hibernate-mapping>

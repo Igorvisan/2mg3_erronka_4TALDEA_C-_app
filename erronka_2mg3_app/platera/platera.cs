@@ -12,5 +12,7 @@ namespace erronka_2mg3_app.platera
         public virtual string Izena { get; set; }
         public virtual int PrestaketaDenbora { get; set; }
         public virtual string PlaterMota { get; set; }
+
+        public virtual double Prezioa { get; set; }
     }
 }

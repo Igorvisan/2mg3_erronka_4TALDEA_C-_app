@@ -137,7 +137,13 @@ namespace erronka_2mg3_app.eskaria
                     double edariPrezioa = (double)eskaeraGlobal.EskaeraDatua["edariPrezioa"];
                     int edariKantitatea = (int)eskaeraGlobal.EskaeraDatua["edariKantitatea"];
 
-                    if(edariPrezioa != 0 || edariKantitatea != 0)
+                    if(edariPrezioa <= 0 || edariKantitatea <= 0)
+                    {
+
+                        MessageBox.Show("No se ha podido completar la operacion: La cantidad o el precio no pueden ser menores o iguales a 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
                     {
                         var eskaera = mySession.Get<erronka_2mg3_app.eskaria.Eskaera>(idEskaera);
                         var edaria = mySession.Get<erronka_2mg3_app.edaria.Edaria>(idEdaria);

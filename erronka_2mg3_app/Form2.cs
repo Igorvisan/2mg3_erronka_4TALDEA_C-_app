@@ -50,96 +50,6 @@ namespace erronka_2mg3_app
 
         }
 
-        private void edari1_Click(object sender, EventArgs e)
-        {
-            string bebida = edari1.Text;
-            anyButtonClick(bebida);
-        }
-
-        private void edari2_Click(object sender, EventArgs e)
-        {
-            string bebida = edari2.Text;
-            anyButtonClick(bebida);
-        }
-
-        private void edari3_Click(object sender, EventArgs e)
-        {
-            string bebida = edari3.Text;
-            anyButtonClick(bebida);
-        }
-
-        private void edari4_Click(object sender, EventArgs e)
-        {
-            string bebida = edari4.Text;
-            anyButtonClick(bebida);
-        }
-
-        private void edari5_Click(object sender, EventArgs e)
-        {
-            string bebida = edari5.Text;
-            anyButtonClick(bebida);
-        }
-
-        private void edari6_Click(object sender, EventArgs e)
-        {
-            string bebida = edari6.Text;
-            anyButtonClick(bebida);
-        }
-
-        private void edari7_Click(object sender, EventArgs e)
-        {
-            string bebida = edari7.Text;
-            anyButtonClick(bebida);
-        }
-
-        private void edari8_Click(object sender, EventArgs e)
-        {
-            string bebida = edari8.Text;
-            anyButtonClick(bebida);
-        }
-
-        private void anyButtonClick(string buttonText)
-        {
-            miConfiguracion = new NHibernate.Cfg.Configuration();
-            miConfiguracion.Configure();
-            mySessionFactory = miConfiguracion.BuildSessionFactory();
-            mySession = mySessionFactory.OpenSession();
-
-            using (var transaccion = mySession.BeginTransaction())
-            {
-                try
-                {
-                    string hql = "SELECT e.Izena FROM edariaMapping e WHERE e.Izena = :izenaParam";
-
-                    string edaria = buttonText;
-
-                    var consulta = mySession.CreateQuery(hql);
-                    consulta.SetParameter("izenaParam", edaria);
-
-                    var resultado = consulta.UniqueResult<string>();
-
-                    if (resultado != null && resultado.Equals(buttonText))
-                    {
-                        transaccion.Commit();
-                        MessageBox.Show($"Has escogido {buttonText}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se ha podido encontrar esa bebida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    transaccion.Rollback();
-                    MessageBox.Show($"No se ha podido completar la operacion: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-        }
-
         private void hurrengoBotoia_Click(object sender, EventArgs e)
         {
             lehen_platera lehen_Platera = new lehen_platera(nombreUsuario);
@@ -174,6 +84,236 @@ namespace erronka_2mg3_app
         {
             string primeraBebida = edari1.Text;
             int kantitatea = Convert.ToInt32(firstDrinkCount.Text);
+            EdariaKudeaketa edariaKudeaketa = new EdariaKudeaketa();
+
+            edariaKudeaketa.eskariaGorde();
+            edariaKudeaketa.edariEskaeraEgin(kantitatea, primeraBebida);
+        }
+
+        private void plusSecondButton_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(secondDrinkCount.Text);
+
+            cantidadBebida++;
+
+            secondDrinkCount.Text = cantidadBebida.ToString();
+        }
+
+        private void lessSecondButton_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(secondDrinkCount.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            secondDrinkCount.Text = cantidadBebida.ToString();
+        }
+
+        private void plusThridButton_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(thirdDrinkCount.Text);
+
+            cantidadBebida++;
+
+            thirdDrinkCount.Text = cantidadBebida.ToString();
+        }
+
+        private void lessThirdButton_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(thirdDrinkCount.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            thirdDrinkCount.Text = cantidadBebida.ToString();
+        }
+
+        private void plusSeventhButton_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(seventhDrinkCounter.Text);
+
+            cantidadBebida++;
+
+            seventhDrinkCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void lessSeventhButton_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(seventhDrinkCounter.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            seventhDrinkCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void lessFourthButton_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(fourthDrinkCount.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            fourthDrinkCount.Text = cantidadBebida.ToString();
+        }
+        private void plusForthButton_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(fourthDrinkCount.Text);
+
+            cantidadBebida++;
+
+            fourthDrinkCount.Text = cantidadBebida.ToString();
+        }
+
+        private void plusFifthDrink_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(fifthDrinkCounter.Text);
+
+            cantidadBebida++;
+
+            fifthDrinkCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void lessFifthDrink_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(fifthDrinkCounter.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            fifthDrinkCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void plusSixthDrink_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(sisxthDrinkCounter.Text);
+
+            cantidadBebida++;
+
+            sisxthDrinkCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void lessSixthDrink_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(sisxthDrinkCounter.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            sisxthDrinkCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void plusEightDrink_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(eightDrinkCounter.Text);
+
+            cantidadBebida++;
+
+            eightDrinkCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void lessEightDrink_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(eightDrinkCounter.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            eightDrinkCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void addSecondDrinkButton_Click(object sender, EventArgs e)
+        {
+            string primeraBebida = edari2.Text;
+            int kantitatea = Convert.ToInt32(secondDrinkCount.Text);
+            EdariaKudeaketa edariaKudeaketa = new EdariaKudeaketa();
+
+            edariaKudeaketa.eskariaGorde();
+            edariaKudeaketa.edariEskaeraEgin(kantitatea, primeraBebida);
+        }
+
+        private void addThridDrinkButton_Click(object sender, EventArgs e)
+        {
+            string primeraBebida = edari3.Text;
+            int kantitatea = Convert.ToInt32(thirdDrinkCount.Text);
+            EdariaKudeaketa edariaKudeaketa = new EdariaKudeaketa();
+
+            edariaKudeaketa.eskariaGorde();
+            edariaKudeaketa.edariEskaeraEgin(kantitatea, primeraBebida);
+        }
+
+        private void addFourthDrink_Click(object sender, EventArgs e)
+        {
+            string primeraBebida = edari4.Text;
+            int kantitatea = Convert.ToInt32(fourthDrinkCount.Text);
+            EdariaKudeaketa edariaKudeaketa = new EdariaKudeaketa();
+
+            edariaKudeaketa.eskariaGorde();
+            edariaKudeaketa.edariEskaeraEgin(kantitatea, primeraBebida);
+        }
+
+        private void addFifthDrink_Click(object sender, EventArgs e)
+        {
+            string primeraBebida = edari5.Text;
+            int kantitatea = Convert.ToInt32(fifthDrinkCounter.Text);
+            EdariaKudeaketa edariaKudeaketa = new EdariaKudeaketa();
+
+            edariaKudeaketa.eskariaGorde();
+            edariaKudeaketa.edariEskaeraEgin(kantitatea, primeraBebida);
+        }
+
+        private void addSixthDrink_Click(object sender, EventArgs e)
+        {
+            string primeraBebida = edari6.Text;
+            int kantitatea = Convert.ToInt32(sisxthDrinkCounter.Text);
+            EdariaKudeaketa edariaKudeaketa = new EdariaKudeaketa();
+
+            edariaKudeaketa.eskariaGorde();
+            edariaKudeaketa.edariEskaeraEgin(kantitatea, primeraBebida);
+        }
+
+        private void addEightDrink_Click(object sender, EventArgs e)
+        {
+            string primeraBebida = edari8.Text;
+            int kantitatea = Convert.ToInt32(eightDrinkCounter.Text);
+            EdariaKudeaketa edariaKudeaketa = new EdariaKudeaketa();
+
+            edariaKudeaketa.eskariaGorde();
+            edariaKudeaketa.edariEskaeraEgin(kantitatea, primeraBebida);
+        }
+
+        private void addSeventhDrinkButton_Click(object sender, EventArgs e)
+        {
+            string primeraBebida = edari7.Text;
+            int kantitatea = Convert.ToInt32(seventhDrinkCounter.Text);
             EdariaKudeaketa edariaKudeaketa = new EdariaKudeaketa();
 
             edariaKudeaketa.eskariaGorde();

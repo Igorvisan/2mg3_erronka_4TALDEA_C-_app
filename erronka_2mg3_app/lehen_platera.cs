@@ -1,4 +1,6 @@
-﻿using NHibernate;
+﻿using erronka_2mg3_app.edaria;
+using erronka_2mg3_app.plateraEskaeria;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -123,6 +125,132 @@ namespace erronka_2mg3_app
             bigarren_platera bigarren_Platera = new bigarren_platera(nombreUsuario);
             bigarren_Platera.Show();
             this.Hide();
+        }
+
+        private void plusFirstDish_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(firstDishCounter.Text);
+
+            cantidadBebida++;
+
+            firstDishCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void lessFirstDish_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(firstDishCounter.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            firstDishCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void plusSecondDish_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(secondDishCounter.Text);
+
+            cantidadBebida++;
+
+            secondDishCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void lessSecondDish_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(secondDishCounter.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            secondDishCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void plusThirdDish_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(thirdDishCounter.Text);
+
+            cantidadBebida++;
+
+            thirdDishCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void lessThirdDish_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(thirdDishCounter.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            thirdDishCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void plusFourthDish_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(fourthDishCounter.Text);
+
+            cantidadBebida++;
+
+            fourthDishCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void lessFourthDIsh_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(fourthDishCounter.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            fourthDishCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void plusFifthDish_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(fifthDishCounter.Text);
+
+            cantidadBebida++;
+
+            fifthDishCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void lessFifthDish_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(fifthDishCounter.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            fifthDishCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void addFirstDish_Click(object sender, EventArgs e)
+        {
+            string primerPlato = sopaPescado.Text;
+            int kantitatea = Convert.ToInt32(firstDishCounter.Text);
+
+            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+
+            plateraEskaera.plateraEskaeraGorde();
+            plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
         }
     }
 }

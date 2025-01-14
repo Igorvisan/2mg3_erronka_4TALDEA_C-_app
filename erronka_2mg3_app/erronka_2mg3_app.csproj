@@ -169,6 +169,8 @@
     <Compile Include="mesaDePedido.Designer.cs">
       <DependentUpon>mesaDePedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="plateraEskaeria\PlateraEskaera_kudeaketa.cs" />
+    <Compile Include="plateraEskaeria\plateraEskaria.cs" />
     <Compile Include="platera\platera.cs" />
     <Compile Include="postre.cs">
       <SubType>Form</SubType>
@@ -255,6 +257,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="edariEskaera\edariEskaera.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="plateraEskaeria\plateraEskaera.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
