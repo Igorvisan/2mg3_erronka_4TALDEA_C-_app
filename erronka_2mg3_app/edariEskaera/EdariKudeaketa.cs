@@ -1,4 +1,5 @@
 ﻿using erronka_2mg3_app.edaria;
+using erronka_2mg3_app.edariEskaera;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -73,26 +74,39 @@ namespace erronka_2mg3_app.eskaria
             {
                 try
                 {
-                    string edariaHql = "SELECT ed.Prezioa FROM Edaria ed WHERE ed.Izena = :izenaParam";
+                    string edariaHql = "SELECT ed.Id, ed.Prezioa FROM Edaria ed WHERE ed.Izena = :izenaParam";
                     var queryEdaria = mySession.CreateQuery(edariaHql);
 
                     queryEdaria.SetParameter("izenaParam", edariIzenaButton);
 
-                    var edariPrezioa = queryEdaria.UniqueResult<double>();
+                    //Usaremos el tipo object como argumento en el UniqueResult para poder recoger los valores de la query y asignarlos a las variables
+                    var resultado = queryEdaria.UniqueResult<object[]>();
 
-                    if (edariPrezioa != 0)
+
+                    if (resultado != null)
                     {
-                        if (!eskaeraGlobal.EskaeraDatua.ContainsKey("edariPrezioa"))
+                        int idEdaria = (int)resultado[0];
+                        double edariPrezioa = (double)resultado[1];
+
+                        if (!eskaeraGlobal.EskaeraDatua.ContainsKey("edariPrezioa") && !eskaeraGlobal.EskaeraDatua.ContainsKey("edariKantitatea")
+                            && !eskaeraGlobal.EskaeraDatua.ContainsKey("idEdaria"))
                         {
                             eskaeraGlobal.EskaeraDatua.Add("edariPrezioa", edariPrezioa);
+                            eskaeraGlobal.EskaeraDatua.Add("edariKantitatea", kantitatea);
+                            eskaeraGlobal.EskaeraDatua.Add("idEdaria", idEdaria);
 
+                            insertEdariEskaera();
                         }
                         else
                         {
                             eskaeraGlobal.EskaeraDatua["edariPrezioa"] = edariPrezioa;
+                            eskaeraGlobal.EskaeraDatua["edariKantitatea"] = kantitatea;
+                            eskaeraGlobal.EskaeraDatua["idEdaria"] = idEdaria;
+
+                            insertEdariEskaera();
                         }
                         transaccion.Commit();
-                        MessageBox.Show($"Has escogido {edariIzenaButton} con un precio de {edariPrezioa}€", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Has escogido {edariIzenaButton} con la ID: {idEdaria} con un precio de {edariPrezioa}€ con la cantidad de {kantitatea}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -101,6 +115,53 @@ namespace erronka_2mg3_app.eskaria
                     }
                 }
                 catch (Exception ex) {
+                    MessageBox.Show($"No se ha podido completar la operacion: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+
+        public void insertEdariEskaera()
+        {
+            miConfiguracion = new NHibernate.Cfg.Configuration();
+            miConfiguracion.Configure();
+            mySessionFactory = miConfiguracion.BuildSessionFactory();
+
+            using (mySession = mySessionFactory.OpenSession())
+            using (var transaccion = mySession.BeginTransaction())
+            {
+                try
+                {
+                    int idEskaera = (int)eskaeraGlobal.EskaeraDatua["idEskaera"];
+                    int idEdaria = (int)eskaeraGlobal.EskaeraDatua["idEdaria"];
+                    double edariPrezioa = (double)eskaeraGlobal.EskaeraDatua["edariPrezioa"];
+                    int edariKantitatea = (int)eskaeraGlobal.EskaeraDatua["edariKantitatea"];
+
+                    if(edariPrezioa != 0 || edariKantitatea != 0)
+                    {
+                        var eskaera = mySession.Get<erronka_2mg3_app.eskaria.Eskaera>(idEskaera);
+                        var edaria = mySession.Get<erronka_2mg3_app.edaria.Edaria>(idEdaria);
+
+                        double prezioFinala = edariPrezioa * edariKantitatea;
+
+                        var edariEskaera = new EskaeraEdaria
+                        {
+                            EskaeraId = eskaera,
+                            EdariaId = edaria,
+                            Prezioa = prezioFinala,
+                            Kantitatea = edariKantitatea
+                        };
+
+                        mySession.Save(edariEskaera);
+                        MessageBox.Show("El pedido se ha efectuado correctamente", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mySession.Flush();
+                        mySession.Clear();
+                        transaccion.Commit();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    transaccion.Rollback();
                     MessageBox.Show($"No se ha podido completar la operacion: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
