@@ -42,84 +42,6 @@ namespace erronka_2mg3_app
             chorizoSidra.BackColor = Color.FromArgb(118, 138, 153);
             hurrengoBotoia.BackColor = Color.FromArgb(118, 138, 153);
         }
-        private void sopaPescado_Click(object sender, EventArgs e)
-        {
-            string plato = sopaPescado.Text;
-            anyButtonClick(plato);
-        }
-
-        private void ensaladaTemplada_Click(object sender, EventArgs e)
-        {
-            string plato = ensaladaTemplada.Text;
-            anyButtonClick(plato);
-        }
-
-        private void alubias_Click(object sender, EventArgs e)
-        {
-            string plato = alubias.Text;
-            anyButtonClick(plato);
-        }
-
-        private void pimientoRelleno_Click(object sender, EventArgs e)
-        {
-            string plato = pimientoRelleno.Text;
-            anyButtonClick(plato);
-        }
-
-        private void ensaladaMixta_Click(object sender, EventArgs e)
-        {
-            string plato = ensaladaMixta.Text;
-            anyButtonClick(plato);
-        }
-
-        private void chorizoSidra_Click(object sender, EventArgs e)
-        {
-            string plato = chorizoSidra.Text; 
-            anyButtonClick(plato);  
-        }
-
-        private void anyButtonClick(string buttonText)
-        {
-            miConfiguracion = new NHibernate.Cfg.Configuration();
-            miConfiguracion.Configure();
-            mySessionFactory = miConfiguracion.BuildSessionFactory();
-            mySession = mySessionFactory.OpenSession();
-
-            using (var transaccion = mySession.BeginTransaction())
-            {
-                try
-                {
-                    string hql = "SELECT p.Izena FROM platera p WHERE p.Izena = :izenaParam";
-
-                    string platera = buttonText;
-
-                    var consulta = mySession.CreateQuery(hql);
-                    consulta.SetParameter("izenaParam", platera);
-
-                    var resultado = consulta.UniqueResult<string>();
-
-                    if (resultado != null && resultado.Equals(buttonText))
-                    {
-                        transaccion.Commit();
-                        MessageBox.Show($"Has escogido {buttonText}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se ha podido encontrar ese plato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    transaccion.Rollback();
-                    MessageBox.Show($"No se ha podido completar la operacion: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-        }
-
         private void hurrengoBotoia_Click(object sender, EventArgs e)
         {
             bigarren_platera bigarren_Platera = new bigarren_platera(nombreUsuario);
@@ -242,10 +164,88 @@ namespace erronka_2mg3_app
             fifthDishCounter.Text = cantidadBebida.ToString();
         }
 
+        private void plusSixthDish_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(sisxthDishCounter.Text);
+
+            cantidadBebida++;
+
+            sisxthDishCounter.Text = cantidadBebida.ToString();
+        }
+
+        private void lessSixthDish_Click(object sender, EventArgs e)
+        {
+            int cantidadBebida = Convert.ToInt32(sisxthDishCounter.Text);
+
+            if (cantidadBebida == 0)
+            {
+                return;
+            }
+
+            cantidadBebida--;
+
+            sisxthDishCounter.Text = cantidadBebida.ToString();
+        }
+
         private void addFirstDish_Click(object sender, EventArgs e)
         {
             string primerPlato = sopaPescado.Text;
             int kantitatea = Convert.ToInt32(firstDishCounter.Text);
+
+            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+
+            plateraEskaera.plateraEskaeraGorde();
+            plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
+        }
+
+        private void addSecondDish_Click(object sender, EventArgs e)
+        {
+            string primerPlato = alubias.Text;
+            int kantitatea = Convert.ToInt32(secondDishCounter.Text);
+
+            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+
+            plateraEskaera.plateraEskaeraGorde();
+            plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
+        }
+
+        private void addThirdDish_Click(object sender, EventArgs e)
+        {
+            string primerPlato = ensaladaMixta.Text;
+            int kantitatea = Convert.ToInt32(thirdDishCounter.Text);
+
+            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+
+            plateraEskaera.plateraEskaeraGorde();
+            plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
+        }
+
+        private void addFourthDish_Click(object sender, EventArgs e)
+        {
+            string primerPlato = ensaladaTemplada.Text;
+            int kantitatea = Convert.ToInt32(fourthDishCounter.Text);
+
+            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+
+            plateraEskaera.plateraEskaeraGorde();
+            plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
+        }
+
+        private void addFifthDish_Click(object sender, EventArgs e)
+        {
+            string primerPlato = pimientoRelleno.Text;
+            int kantitatea = Convert.ToInt32(fifthDishCounter.Text);
+
+            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+
+            plateraEskaera.plateraEskaeraGorde();
+            plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
+        }
+
+        private void addSixthDish_Click(object sender, EventArgs e)
+        {
+            string primerPlato = chorizoSidra.Text;
+            int kantitatea = Convert.ToInt32(sisxthDishCounter.Text);
 
             PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
 

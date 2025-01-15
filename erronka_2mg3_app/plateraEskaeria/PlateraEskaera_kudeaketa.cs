@@ -3,6 +3,7 @@ using erronka_2mg3_app.eskaria;
 using NHibernate;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,8 @@ namespace erronka_2mg3_app.plateraEskaeria
             miConfiguracion = new NHibernate.Cfg.Configuration();
             miConfiguracion.Configure();
             mySessionFactory = miConfiguracion.BuildSessionFactory();
+
+
 
             using (mySession = mySessionFactory.OpenSession())
             using (var transaccion = mySession.BeginTransaction())
@@ -88,11 +91,15 @@ namespace erronka_2mg3_app.plateraEskaeria
             miConfiguracion.Configure();
             mySessionFactory = miConfiguracion.BuildSessionFactory();
 
+            horaDeServir();
+
             using (mySession = mySessionFactory.OpenSession())
             using (var transaccion = mySession.BeginTransaction())
             {
                 try
-                {
+                { 
+                    DateTime fechaPedido = Convert.ToDateTime(eskaeraGlobal.EskaeraDatua["dateTimeNow"]);
+                    DateTime fechaServir = Convert.ToDateTime(eskaeraGlobal.EskaeraDatua["horaFinal"]);
                     int idEskaera = (int)eskaeraGlobal.EskaeraDatua["idEskaera"];
                     int idPlatera = (int)eskaeraGlobal.EskaeraDatua["idPlatera"];
                     double platerPrezioa = (double)eskaeraGlobal.EskaeraDatua["plateraPrezioa"];
@@ -116,6 +123,8 @@ namespace erronka_2mg3_app.plateraEskaeria
                             PlateraId = platera,
                             Prezioa = prezioFinala,
                             Kantitatea = platerKantitatea,
+                            EskaeraOrdua = fechaPedido,
+                            ZerbitzatzekoOrdua = fechaServir
                         };
 
                         mySession.Save(eskaeraPlatera);
@@ -123,7 +132,7 @@ namespace erronka_2mg3_app.plateraEskaeria
                         mySession.Flush();
                         mySession.Clear();
                         transaccion.Commit();
-                    }
+                     }
                 }
                 catch (Exception ex)
                 {
@@ -136,16 +145,16 @@ namespace erronka_2mg3_app.plateraEskaeria
 
         public void horaDeServir()
         {
-            DateTime dateTimePedido = DateTime.Now;
-
-            string horaPedido = dateTimePedido.ToString("HH:mm");
-
             miConfiguracion = new NHibernate.Cfg.Configuration();
             miConfiguracion.Configure();
             mySessionFactory = miConfiguracion.BuildSessionFactory();
 
             try
             {
+                DateTime dateTimePedido = DateTime.Now;
+
+                string horaPedido = dateTimePedido.ToString("HH:mm");
+
                 if (!eskaeraGlobal.EskaeraDatua.ContainsKey("dateTimeNow"))
                 {
                     eskaeraGlobal.EskaeraDatua.Add("dateTimeNow", horaPedido);
@@ -185,13 +194,15 @@ namespace erronka_2mg3_app.plateraEskaeria
                                 minutosTotales -= 60;
                             }
                             string horaFinal = horas + ":" + minutosTotales;
+                            DateTime parsedDate = DateTime.ParseExact(horaFinal, "HH:mm", CultureInfo.InvariantCulture);
+
                             if (!eskaeraGlobal.EskaeraDatua.ContainsKey("horaFinal"))
                             {
-                                eskaeraGlobal.EskaeraDatua.Add("horaFinal", horaFinal);
+                                eskaeraGlobal.EskaeraDatua.Add("horaFinal", parsedDate);
                             }
                             else
                             {
-                                eskaeraGlobal.EskaeraDatua["horaFinal"] = horaFinal;
+                                eskaeraGlobal.EskaeraDatua["horaFinal"] = parsedDate;
                             }
                             transaccion.Commit();
                             MessageBox.Show($"El pedido se ha efectuado correctamente y se servira a las {horaFinal}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -123,6 +123,7 @@
             this.addSixthDish.TabIndex = 29;
             this.addSixthDish.Text = "AÑADIR";
             this.addSixthDish.UseVisualStyleBackColor = true;
+            this.addSixthDish.Click += new System.EventHandler(this.addSixthDish_Click);
             // 
             // lessSixthDish
             // 
@@ -132,6 +133,7 @@
             this.lessSixthDish.TabIndex = 28;
             this.lessSixthDish.Text = "-";
             this.lessSixthDish.UseVisualStyleBackColor = true;
+            this.lessSixthDish.Click += new System.EventHandler(this.lessSixthDish_Click);
             // 
             // plusSixthDish
             // 
@@ -141,6 +143,7 @@
             this.plusSixthDish.TabIndex = 27;
             this.plusSixthDish.Text = "+";
             this.plusSixthDish.UseVisualStyleBackColor = true;
+            this.plusSixthDish.Click += new System.EventHandler(this.plusSixthDish_Click);
             // 
             // addFifthDish
             // 
@@ -150,6 +153,7 @@
             this.addFifthDish.TabIndex = 26;
             this.addFifthDish.Text = "AÑADIR";
             this.addFifthDish.UseVisualStyleBackColor = true;
+            this.addFifthDish.Click += new System.EventHandler(this.addFifthDish_Click);
             // 
             // fifthDishCounter
             // 
@@ -190,6 +194,7 @@
             this.addFourthDish.TabIndex = 22;
             this.addFourthDish.Text = "AÑADIR";
             this.addFourthDish.UseVisualStyleBackColor = true;
+            this.addFourthDish.Click += new System.EventHandler(this.addFourthDish_Click);
             // 
             // lessFourthDIsh
             // 
@@ -230,6 +235,7 @@
             this.addThirdDish.TabIndex = 18;
             this.addThirdDish.Text = "AÑADIR";
             this.addThirdDish.UseVisualStyleBackColor = true;
+            this.addThirdDish.Click += new System.EventHandler(this.addThirdDish_Click);
             // 
             // thirdDishCounter
             // 
@@ -281,6 +287,7 @@
             this.addSecondDish.TabIndex = 13;
             this.addSecondDish.Text = "AÑADIR";
             this.addSecondDish.UseVisualStyleBackColor = true;
+            this.addSecondDish.Click += new System.EventHandler(this.addSecondDish_Click);
             // 
             // lessSecondDish
             // 
@@ -374,7 +381,6 @@
             this.chorizoSidra.TabIndex = 4;
             this.chorizoSidra.Text = "Chorizo a la sidra";
             this.chorizoSidra.UseVisualStyleBackColor = true;
-            this.chorizoSidra.Click += new System.EventHandler(this.chorizoSidra_Click);
             // 
             // pimientoRelleno
             // 
@@ -386,7 +392,6 @@
             this.pimientoRelleno.TabIndex = 3;
             this.pimientoRelleno.Text = "Pimientos rellenos";
             this.pimientoRelleno.UseVisualStyleBackColor = true;
-            this.pimientoRelleno.Click += new System.EventHandler(this.pimientoRelleno_Click);
             // 
             // ensaladaTemplada
             // 
@@ -398,7 +403,6 @@
             this.ensaladaTemplada.TabIndex = 1;
             this.ensaladaTemplada.Text = "Ensalada templada";
             this.ensaladaTemplada.UseVisualStyleBackColor = true;
-            this.ensaladaTemplada.Click += new System.EventHandler(this.ensaladaTemplada_Click);
             // 
             // ensaladaMixta
             // 
@@ -410,7 +414,6 @@
             this.ensaladaMixta.TabIndex = 2;
             this.ensaladaMixta.Text = "Ensalada mixta";
             this.ensaladaMixta.UseVisualStyleBackColor = true;
-            this.ensaladaMixta.Click += new System.EventHandler(this.ensaladaMixta_Click);
             // 
             // alubias
             // 
@@ -422,7 +425,6 @@
             this.alubias.TabIndex = 1;
             this.alubias.Text = "Alubias con chorizo";
             this.alubias.UseVisualStyleBackColor = true;
-            this.alubias.Click += new System.EventHandler(this.alubias_Click);
             // 
             // label1
             // 
