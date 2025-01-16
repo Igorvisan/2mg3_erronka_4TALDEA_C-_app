@@ -188,12 +188,16 @@ namespace erronka_2mg3_app.plateraEskaeria
                         {
                             int prestaketaDenbora = resultadoHora;
                             int minutosTotales = minutos + prestaketaDenbora;
+
                             if (minutosTotales >= 60)
                             {
-                                horas++;
-                                minutosTotales -= 60;
+                                horas += minutosTotales / 60;
+                                minutosTotales %= 60;
                             }
-                            string horaFinal = horas + ":" + minutosTotales;
+
+                            // Formatear hora final con ceros a la izquierda
+                            string horaFinal = $"{horas:D2}:{minutosTotales:D2}";
+
                             DateTime parsedDate = DateTime.ParseExact(horaFinal, "HH:mm", CultureInfo.InvariantCulture);
 
                             if (!eskaeraGlobal.EskaeraDatua.ContainsKey("horaFinal"))
@@ -204,28 +208,28 @@ namespace erronka_2mg3_app.plateraEskaeria
                             {
                                 eskaeraGlobal.EskaeraDatua["horaFinal"] = parsedDate;
                             }
+
                             transaccion.Commit();
-                            MessageBox.Show($"El pedido se ha efectuado correctamente y se servira a las {horaFinal}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            MessageBox.Show($"El pedido se ha efectuado correctamente y se servirá a las {horaFinal}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("No se ha podido encontrar la hora de preparacion del plato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
+                            MessageBox.Show("No se ha podido encontrar la hora de preparación del plato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"No se ha podido completar la operacion: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        transaccion.Rollback();
+                        MessageBox.Show($"No se ha podido completar la operación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"No se ha podido completar la operacion: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show($"No se ha podido completar la operación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

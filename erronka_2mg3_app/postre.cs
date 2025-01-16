@@ -1,4 +1,5 @@
-﻿using erronka_2mg3_app.plateraEskaeria;
+﻿using erronka_2mg3_app.eskaria;
+using erronka_2mg3_app.plateraEskaeria;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -172,6 +173,10 @@ namespace erronka_2mg3_app
 
             plateraEskaera.plateraEskaeraGorde();
             plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
+        }
+
+        private void finalizarButton_Click(object sender, EventArgs e)
+        {
         }
     }
 }

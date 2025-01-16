@@ -296,6 +296,7 @@
             this.finalizarButton.TabIndex = 4;
             this.finalizarButton.Text = "FINALIZAR";
             this.finalizarButton.UseVisualStyleBackColor = false;
+            this.finalizarButton.Click += new System.EventHandler(this.finalizarButton_Click);
             // 
             // sorbete
             // 
