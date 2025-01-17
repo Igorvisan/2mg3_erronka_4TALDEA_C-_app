@@ -131,6 +131,7 @@
     <Compile Include="edariEskaera\EdariKudeaketa.cs" />
     <Compile Include="eskaeraGlobal.cs" />
     <Compile Include="eskaria\Eskaera.cs" />
+    <Compile Include="eskaria\EskaeraKudeaketa.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

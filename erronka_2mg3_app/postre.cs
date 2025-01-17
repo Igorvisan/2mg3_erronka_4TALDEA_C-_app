@@ -177,6 +177,9 @@ namespace erronka_2mg3_app
 
         private void finalizarButton_Click(object sender, EventArgs e)
         {
+            EskaeraKudeaketa eskaeraKudeaketa = new EskaeraKudeaketa();
+
+            eskaeraKudeaketa.actualizarPedidoGlobal();
         }
     }
 }
