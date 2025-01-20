@@ -1,4 +1,5 @@
 ﻿using erronka_2mg3_app.eskaria;
+using erronka_2mg3_app.Fakturazioa;
 using erronka_2mg3_app.plateraEskaeria;
 using NHibernate;
 using System;
@@ -180,6 +181,10 @@ namespace erronka_2mg3_app
             EskaeraKudeaketa eskaeraKudeaketa = new EskaeraKudeaketa();
 
             eskaeraKudeaketa.actualizarPedidoGlobal();
+
+            EskaeraResumen eskaeraResumen = new EskaeraResumen();   
+            eskaeraResumen.Show();  
+            this.Hide();
         }
     }
 }
