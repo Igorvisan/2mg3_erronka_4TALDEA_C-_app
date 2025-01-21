@@ -54,6 +54,14 @@ namespace erronka_2mg3_app.Fakturazioa
                         MessageBox.Show("No se han encontrado plateras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    if(!eskaeraGlobal.EskaeraDatua.ContainsKey("plateraIzenakLista"))
+                    {
+                        eskaeraGlobal.EskaeraDatua.Add("plateraIzenakLista", resultsDetails);
+                    }
+                    else
+                    {
+                        eskaeraGlobal.EskaeraDatua["plateraIzenakLista"] = resultsDetails;
+                    }
 
                     int yOffset = 60; // Espaciado vertical
                     foreach (var item in resultsDetails)
@@ -194,10 +202,9 @@ namespace erronka_2mg3_app.Fakturazioa
 
         public void crearFacturaPdf(string path)
         {
-            // Crear factura en PDF
             DateTime fechaActual = DateTime.Now;
 
-            string nombreFactura = "faktura_" + fechaActual.ToString("yyyyMMdd_HHmmss") + ".pdf"; 
+            string nombreFactura = "faktura_" + fechaActual.ToString("yyyyMMdd_HHmmss") + ".pdf";
             var exportarPDF = System.IO.Path.Combine(path, nombreFactura);
 
             // Crear el archivo PDF
@@ -207,31 +214,29 @@ namespace erronka_2mg3_app.Fakturazioa
                 {
                     // Crear el documento con márgenes
                     var doc = new iText.Layout.Document(pdf, iText.Kernel.Geom.PageSize.A4);
-                    doc.SetMargins(90, 36, 36, 36);
+                    doc.SetMargins(36, 36, 36, 36);
 
-                    //Cargar logo
+                    // Cargar logo
                     string basePath = @"C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app";
                     string logoRelativePath = @"restaurantLogo\restauranLogo.png";
                     string logoPath = System.IO.Path.Combine(basePath, logoRelativePath);
 
                     ImageData imagenLogo = ImageDataFactory.Create(logoPath);
 
-                    if(!File.Exists(logoPath))
+                    if (!File.Exists(logoPath))
                     {
                         MessageBox.Show("No se ha encontrado el logo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
                     var image = new iText.Layout.Element.Image(imagenLogo)
-
                         .SetTextAlignment(TextAlignment.CENTER)
-                        .SetFixedPosition(1, 10, 700);
+                        .SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER)
+                        .SetWidth(100)//Ancho deseado 
+                        .SetHeight(100);//largura deseada
 
-                    //Agregar la imagen al documento
+                    // Agregar la imagen al documento
                     doc.Add(image);
-                    Paragraph encabezado = new Paragraph("");
-                    encabezado.Add(image);
-                    doc.Add(encabezado);
 
                     // Datos del restaurante
                     string nombreRestaurante = "SAWORE";
@@ -239,69 +244,120 @@ namespace erronka_2mg3_app.Fakturazioa
                     string ciudadRestaurante = "Ordizia";
 
                     // Añadir datos del restaurante
-                    PdfFont bolfFont = PdfFontFactory.CreateFont();
+                    PdfFont boldFont = PdfFontFactory.CreateFont();
                     iText.Kernel.Colors.Color azulLogo = new DeviceRgb(52, 90, 123);
-                    iText.Kernel.Colors.Color negro = new DeviceRgb(0, 0, 0);
 
                     Paragraph parrafo0 = new Paragraph("Cotización de Producto")
                         .SetFontSize(32)
-                        .SetMargins(0,0,0,0)
-                        .SetPageNumber(1)
                         .SetFontColor(azulLogo)
-                        .SetFont(bolfFont)
-                        .SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER)
+                        .SetFont(boldFont)
                         .SetTextAlignment(TextAlignment.CENTER);
 
                     doc.Add(parrafo0);
 
-                    //FOLIO
+                    Paragraph folio = new Paragraph("FACTURA")
+                        .SetFontSize(18)
+                        .SetFontColor(azulLogo)
+                        .SetFont(boldFont)
+                        .SetTextAlignment(TextAlignment.CENTER);
 
-                    Paragraph folio = new Paragraph("");
-                    folio.Add("FACTURA");
-
-                    folio.SetFixedPosition(300, 685, 300);
-                    folio.SetPageNumber(1);
-                    folio.SetFont(bolfFont);
-                    folio.SetTextAlignment(TextAlignment.CENTER);
-                    folio.SetFontSize(18);
-                    folio.SetFontColor(azulLogo);
                     doc.Add(folio);
 
+                    Paragraph restauranteData = new Paragraph()
+                        .Add("Nombre: " + nombreRestaurante + "\n")
+                        .Add("Dirección: " + direccionRestaurante + "\n")
+                        .Add("Ciudad: " + ciudadRestaurante + "\n")
+                        .Add("Mesa: " + eskaeraGlobal.EskaeraDatua["idMesa"].ToString() + "\n")
+                        .Add("Fecha de creación: " + fechaActual.ToString("dd/MM/yyyy"))
+                        .SetTextAlignment(TextAlignment.CENTER);
 
-                    Paragraph parrafo1 = new Paragraph("FECHA DE CREACION: " + DateTime.Now + "\n").SetFontSize(12);
-                        if (eskaeraGlobal.EskaeraDatua.ContainsKey("edariIzenakLista"))
+                    doc.Add(restauranteData);
+
+                    Paragraph edariLista = new Paragraph("BEBIDAS:")
+                        .SetFontSize(14)
+                        .SetFontColor(azulLogo)
+                        .SetFont(boldFont)
+                        .SetTextAlignment(TextAlignment.LEFT);
+
+                    doc.Add(edariLista);
+
+                    // Crear tabla para los items de BEBIDAS
+                    Table table = new Table(3, true);
+                    table.AddHeaderCell("Producto");
+                    table.AddHeaderCell("Cantidad");
+                    table.AddHeaderCell("Precio");
+
+                    if (eskaeraGlobal.EskaeraDatua.ContainsKey("edariIzenakLista"))
+                    {
+                        var Bebidas = (List<object[]>)eskaeraGlobal.EskaeraDatua["edariIzenakLista"];
+
+                        foreach (var item in Bebidas)
                         {
-                                var Bebidas = (List<object[]>)eskaeraGlobal.EskaeraDatua["edariIzenakLista"];
+                            string nombreBebida = (string)item[0];
+                            double precio = (double)(item[1]);
+                            int cantidad = (int)(item[2]);
 
-                            foreach (var item in Bebidas)
-                            {
-                                string nombreBebida = (string)item[0];
-                                double precio = (double)item[1];
-                                int cantidad = (int)item[2];
-                                double subtotal = precio * cantidad;
-
-                                doc.Add(new Paragraph($"- {nombreBebida} x{cantidad} - {subtotal:C}")
-                                    .SetFontSize(12));
-                            }
+                            table.AddCell(nombreBebida);
+                            table.AddCell(cantidad.ToString());
+                            table.AddCell(precio.ToString("C")); // Mostrar con dos decimales
                         }
-                        else
+                    }
+                    else
+                    {
+                        table.AddCell("No se han encontrado bebidas");
+                    }
+
+                    doc.Add(table);
+
+
+                    Paragraph platosLista = new Paragraph("PLATOS:")
+                        .SetFontSize(14)
+                        .SetFontColor(azulLogo)
+                        .SetFont(boldFont)
+                        .SetTextAlignment(TextAlignment.LEFT);
+
+                    doc.Add(platosLista);
+
+                    // Crear tabla para los items de PLATOS
+                    Table table2 = new Table(3, true);
+                    table2.AddHeaderCell("Producto");
+                    table2.AddHeaderCell("Cantidad");
+                    table2.AddHeaderCell("Precio");
+
+                    if (eskaeraGlobal.EskaeraDatua.ContainsKey("plateraIzenakLista"))
+                    {
+                        var platos = (List<object[]>)eskaeraGlobal.EskaeraDatua["plateraIzenakLista"];
+
+                        foreach (var plato in platos)
                         {
-                            doc.Add(new Paragraph("No se han encontrado bebidas")
-                                .SetFontSize(12));
+                            string nombrePlato = (string)plato[0];
+                            double precio = (double)(plato[1]);
+                            int cantidad = (int)(plato[2]);
+
+                            table2.AddCell(nombrePlato);
+                            table2.AddCell(cantidad.ToString());
+                            table2.AddCell(precio.ToString("C")); // Mostrar con dos decimales
                         }
+                    }
+                    else
+                    {
+                        table2.AddCell("No se han encontrado platos");
+                    }
 
-                        doc.Close();
+                    doc.Add(table2);
 
+                    Paragraph precioTotal = new Paragraph()
+                        .Add("TOTAL: " + eskaeraGlobal.EskaeraDatua["prezioPlatoMaximo"].ToString())
+                        .SetFontSize(32)
+                        .SetFontColor(new DeviceRgb(System.Drawing.Color.White))
+                        .SetMarginTop(10)
+                        .SetFont(boldFont)
+                        .SetBackgroundColor(azulLogo)
+                        .SetTextAlignment(TextAlignment.RIGHT);
 
-                    // Añadir contenido al documento
-                    /*doc.Add(new Paragraph("Factura de la mesa: " + eskaeraGlobal.EskaeraDatua["idMesa"]));
-                    doc.Add(new Paragraph("Fecha: " + fechaActual.ToString("dd/MM/yyyy HH:mm")));
-                    doc.Add(new Paragraph("Platos: "));
-                    doc.Add(new Paragraph("Bebidas: "));
-                    doc.Add(new Paragraph("Total: " + eskaeraGlobal.EskaeraDatua["totala"]));
+                    doc.Add(precioTotal);
 
-                    // Cerrar el documento
-                    doc.Close();*/
+                    doc.Close();
                 }
             }
         }

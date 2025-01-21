@@ -39,7 +39,6 @@ namespace erronka_2mg3_app.eskaria
                         MessageBox.Show("El precio total de los platos o bebidas es inválido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-
                     double prezioTotalEskaera = prezioPlatoMaximo + prezioEdariMaximo;
 
                     var r = mySession.Get<erronka_2mg3_app.eskaria.Eskaera>(idEskaeraGlobal);
@@ -48,6 +47,8 @@ namespace erronka_2mg3_app.eskaria
                     mySession.Flush();
                     mySession.Clear();
                     transaccion.Commit();
+
+                    eskaeraGlobal.EskaeraDatua["prezioPlatoMaximo"] = prezioPlatoMaximo;
 
                 }
                 catch (Exception ex)
