@@ -347,7 +347,7 @@ namespace erronka_2mg3_app.Fakturazioa
                     doc.Add(table2);
 
                     Paragraph precioTotal = new Paragraph()
-                        .Add("TOTAL: " + eskaeraGlobal.EskaeraDatua["prezioPlatoMaximo"].ToString())
+                        .Add("TOTAL: " + eskaeraGlobal.EskaeraDatua["prezioPlatoMaximo"].ToString() + "€")
                         .SetFontSize(32)
                         .SetFontColor(new DeviceRgb(System.Drawing.Color.White))
                         .SetMarginTop(10)
