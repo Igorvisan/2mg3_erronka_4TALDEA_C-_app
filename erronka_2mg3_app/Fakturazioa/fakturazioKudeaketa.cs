@@ -15,6 +15,7 @@ using iText.IO.Image;
 using System.IO;
 using iText.Kernel.Font;
 using iText.Kernel.Colors;
+using erronka_2mg3_app.Fakturazioa;
 
 
 namespace erronka_2mg3_app.Fakturazioa
@@ -219,9 +220,10 @@ namespace erronka_2mg3_app.Fakturazioa
                     doc.SetMargins(36, 36, 36, 36);
 
                     // Cargar logo
-                    string basePath = @"C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app";
-                    string logoRelativePath = @"restaurantLogo\restauranLogo.png";
+                    string basePath = AppDomain.CurrentDomain.BaseDirectory;
+                    string logoRelativePath = @"..\..\..\restaurantLogo\restauranLogo.png";
                     string logoPath = System.IO.Path.Combine(basePath, logoRelativePath);
+
 
                     ImageData imagenLogo = ImageDataFactory.Create(logoPath);
 
