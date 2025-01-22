@@ -190,6 +190,8 @@ namespace erronka_2mg3_app.Fakturazioa
                         MessageBox.Show("El valor del precio total del pedido es invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    transaccion.Commit();
+                    eskaeraGlobal.EskaeraDatua.Add("precioMaximoTotal", total);
                 }
                 catch (Exception ex)
                 {
@@ -347,10 +349,10 @@ namespace erronka_2mg3_app.Fakturazioa
                     doc.Add(table2);
 
                     Paragraph precioTotal = new Paragraph()
-                        .Add("TOTAL: " + eskaeraGlobal.EskaeraDatua["prezioPlatoMaximo"].ToString() + "€")
+                        .Add("TOTAL: " + eskaeraGlobal.EskaeraDatua["precioMaximoTotal"].ToString() + "€")
                         .SetFontSize(32)
                         .SetFontColor(new DeviceRgb(System.Drawing.Color.White))
-                        .SetMarginTop(10)
+                        .SetMarginTop(20)
                         .SetFont(boldFont)
                         .SetBackgroundColor(azulLogo)
                         .SetTextAlignment(TextAlignment.RIGHT);
