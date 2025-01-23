@@ -16,6 +16,7 @@ using System.IO;
 using iText.Kernel.Font;
 using iText.Kernel.Colors;
 using erronka_2mg3_app.Fakturazioa;
+using System.Diagnostics;
 
 
 namespace erronka_2mg3_app.Fakturazioa
@@ -366,5 +367,160 @@ namespace erronka_2mg3_app.Fakturazioa
             }
         }
 
+        public void borrarPedidoGeneral()
+        {
+            borrarPedidoEdaria();
+            borrarPedidoPlatera();
+
+            miConfiguracion = new NHibernate.Cfg.Configuration();
+            miConfiguracion.Configure();
+            mySessionFactory = miConfiguracion.BuildSessionFactory();
+
+            using (var mySession = mySessionFactory.OpenSession())
+            using (var transaccion = mySession.BeginTransaction())
+            {
+                try
+                {
+                    if(eskaeraGlobal.EskaeraDatua == null)
+                    {
+                        throw new NullReferenceException("eskaeraGlobal o eskaeraGlobal.EskaeraDatua es nulo.");
+                    }
+                    if(!eskaeraGlobal.EskaeraDatua.ContainsKey("idEskaera"))
+                    {
+                        MessageBox.Show("No se ha encontrado la id eskaera", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    int idEskaeraGlobal = (int)eskaeraGlobal.EskaeraDatua["idEskaera"];
+                    string hql = "DELETE FROM Eskaera esk WHERE esk.Id = :idParam";
+                    var query = mySession.CreateQuery(hql);
+                    query.SetParameter("idParam", idEskaeraGlobal);
+
+                    int result = query.ExecuteUpdate();
+
+                    if(result == 0)
+                    {
+                        throw new Exception("No se encontró ningún registro con el id especificado.");
+                    }
+                    transaccion.Commit();
+                    MessageBox.Show("Linea borrada con éxito", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var firstKey = eskaeraGlobal.EskaeraDatua.Keys.First();
+                    var firstValue = eskaeraGlobal.EskaeraDatua[firstKey];
+                    eskaeraGlobal.EskaeraDatua.Clear();
+                    eskaeraGlobal.EskaeraDatua[firstKey] = firstValue;
+
+                    // Mostrar en un MessageBox para verificar
+                    MessageBox.Show($"Key: {firstKey}, Value: {firstValue}", "Verificación de datos");
+
+                }
+                catch (Exception ex)
+                {
+                    transaccion.Rollback();
+                    MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    mySession.Flush();
+                    mySession.Clear();
+                }
+            }
+        }
+
+        public void borrarPedidoEdaria()
+        {
+            miConfiguracion = new NHibernate.Cfg.Configuration();
+            miConfiguracion.Configure();
+            mySessionFactory = miConfiguracion.BuildSessionFactory();
+
+            using (mySession = mySessionFactory.OpenSession())
+            using (var transaccion = mySession.BeginTransaction())
+            {
+                try
+                {
+                    int idEskaeraGlobal = (int)eskaeraGlobal.EskaeraDatua["idEskaera"];
+
+                    if (idEskaeraGlobal == 0)
+                    {
+                        MessageBox.Show("No se ha encontrado la id de la eskaera", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (eskaeraGlobal.EskaeraDatua == null)
+                    {
+                        throw new NullReferenceException("eskaeraGlobal o eskaeraGlobal.EskaeraDatua es nulo.");
+                    }
+
+                    string hqlDeleteEdaria = "DELETE FROM EskaeraEdaria ed WHERE ed.EskaeraId = :idParam";
+                    var queryDeleteEdaria = mySession.CreateQuery(hqlDeleteEdaria);
+
+                    queryDeleteEdaria.SetParameter("idParam", idEskaeraGlobal);
+
+                    int resultados = queryDeleteEdaria.ExecuteUpdate();
+
+                    if (resultados == 0)
+                    {
+                        throw new Exception("No se encontró ningún registro con el id especificado.");
+                    }
+                    else
+                    {
+                        transaccion.Commit();
+                        MessageBox.Show("Linea borrada con éxito", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    transaccion.Rollback();
+                    MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        public void borrarPedidoPlatera()
+        {
+            miConfiguracion = new NHibernate.Cfg.Configuration();
+            miConfiguracion.Configure();
+            mySessionFactory = miConfiguracion.BuildSessionFactory();
+
+            using (mySession = mySessionFactory.OpenSession())
+            using (var transaccion = mySession.BeginTransaction())
+            {
+                try
+                {
+                    int idEskaeraGlobal = (int)eskaeraGlobal.EskaeraDatua["idEskaera"];
+
+                    if (idEskaeraGlobal == 0)
+                    {
+                        MessageBox.Show("No se ha encontrado la id de la eskaera", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (eskaeraGlobal.EskaeraDatua == null)
+                    {
+                        throw new NullReferenceException("eskaeraGlobal o eskaeraGlobal.EskaeraDatua es nulo.");
+                    }
+
+                    string hqlDeletePlatera = "DELETE FROM plateraEskaria pl WHERE pl.EskaeraId = :idParam";
+                    var queryDeletePlatera = mySession.CreateQuery(hqlDeletePlatera);
+
+                    queryDeletePlatera.SetParameter("idParam", idEskaeraGlobal);
+
+                    int resultados = queryDeletePlatera.ExecuteUpdate();
+
+                    if (resultados > 0)
+                    {
+                        transaccion.Commit();
+                        MessageBox.Show("Linea borrada con éxito", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        throw new Exception("No se encontró ningún registro con el id especificado.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    transaccion.Rollback();
+                    MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
+

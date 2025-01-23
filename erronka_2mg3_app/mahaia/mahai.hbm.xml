@@ -10,7 +10,6 @@
 		</id>
 		<!-- Los nombres de la propiedades deben de coincidir con los nombres de tu tabla de la base de datos en la propiedad column -->
 		<property name="GehienezkoKantitatea" column="gehienezko_kopurua" type="int"/>
-		<property name="Libre" column="libre" type="bool"/>
 		<property name="Izena" column="izena" type="string"/>
 	</class>
 </hibernate-mapping>

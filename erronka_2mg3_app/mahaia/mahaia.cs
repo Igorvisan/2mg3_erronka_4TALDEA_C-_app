@@ -12,8 +12,6 @@ namespace erronka_2mg3_app.mahaia
 
         public virtual int GehienezkoKantitatea { get; set; }
 
-        public virtual bool Libre { get; set; }
-
         public virtual string Izena { get; set; }
 
     }

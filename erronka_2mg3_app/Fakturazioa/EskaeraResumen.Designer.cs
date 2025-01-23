@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.laburpenBox = new System.Windows.Forms.GroupBox();
-            this.sacarTicketPdf = new System.Windows.Forms.Button();
-            this.editarPedido = new System.Windows.Forms.Button();
-            this.platosLista = new System.Windows.Forms.Label();
-            this.bebidasLista = new System.Windows.Forms.Label();
-            this.totalText = new System.Windows.Forms.Label();
             this.totalNumber = new System.Windows.Forms.Label();
+            this.totalText = new System.Windows.Forms.Label();
+            this.bebidasLista = new System.Windows.Forms.Label();
+            this.platosLista = new System.Windows.Forms.Label();
+            this.sacarTicketPdf = new System.Windows.Forms.Button();
+            this.borrarPedido = new System.Windows.Forms.Button();
             this.lblMesa = new System.Windows.Forms.Label();
             this.numMesa = new System.Windows.Forms.Label();
             this.laburpenBox.SuspendLayout();
@@ -47,52 +47,22 @@
             this.laburpenBox.Controls.Add(this.bebidasLista);
             this.laburpenBox.Controls.Add(this.platosLista);
             this.laburpenBox.Controls.Add(this.sacarTicketPdf);
-            this.laburpenBox.Controls.Add(this.editarPedido);
+            this.laburpenBox.Controls.Add(this.borrarPedido);
             this.laburpenBox.Location = new System.Drawing.Point(63, 70);
             this.laburpenBox.Name = "laburpenBox";
             this.laburpenBox.Size = new System.Drawing.Size(1167, 615);
             this.laburpenBox.TabIndex = 0;
             this.laburpenBox.TabStop = false;
-            this.laburpenBox.Enter += new System.EventHandler(this.laburpenBox_Enter);
             // 
-            // sacarTicketPdf
+            // totalNumber
             // 
-            this.sacarTicketPdf.Location = new System.Drawing.Point(319, 502);
-            this.sacarTicketPdf.Name = "sacarTicketPdf";
-            this.sacarTicketPdf.Size = new System.Drawing.Size(162, 54);
-            this.sacarTicketPdf.TabIndex = 9;
-            this.sacarTicketPdf.Text = "SACAR TICKET";
-            this.sacarTicketPdf.UseVisualStyleBackColor = true;
-            this.sacarTicketPdf.Click += new System.EventHandler(this.sacarTicketPdf_Click);
-            // 
-            // editarPedido
-            // 
-            this.editarPedido.Location = new System.Drawing.Point(118, 502);
-            this.editarPedido.Name = "editarPedido";
-            this.editarPedido.Size = new System.Drawing.Size(162, 54);
-            this.editarPedido.TabIndex = 8;
-            this.editarPedido.Text = "EDITAR PEDIDO";
-            this.editarPedido.UseVisualStyleBackColor = true;
-            // 
-            // platosLista
-            // 
-            this.platosLista.AutoSize = true;
-            this.platosLista.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.platosLista.Location = new System.Drawing.Point(193, 33);
-            this.platosLista.Name = "platosLista";
-            this.platosLista.Size = new System.Drawing.Size(75, 24);
-            this.platosLista.TabIndex = 10;
-            this.platosLista.Text = "PLATOS";
-            // 
-            // bebidasLista
-            // 
-            this.bebidasLista.AutoSize = true;
-            this.bebidasLista.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bebidasLista.Location = new System.Drawing.Point(846, 33);
-            this.bebidasLista.Name = "bebidasLista";
-            this.bebidasLista.Size = new System.Drawing.Size(82, 24);
-            this.bebidasLista.TabIndex = 11;
-            this.bebidasLista.Text = "BEBIDAS";
+            this.totalNumber.AutoSize = true;
+            this.totalNumber.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalNumber.Location = new System.Drawing.Point(846, 515);
+            this.totalNumber.Name = "totalNumber";
+            this.totalNumber.Size = new System.Drawing.Size(19, 24);
+            this.totalNumber.TabIndex = 13;
+            this.totalNumber.Text = "0";
             // 
             // totalText
             // 
@@ -104,15 +74,45 @@
             this.totalText.TabIndex = 12;
             this.totalText.Text = "TOTAL:";
             // 
-            // totalNumber
+            // bebidasLista
             // 
-            this.totalNumber.AutoSize = true;
-            this.totalNumber.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalNumber.Location = new System.Drawing.Point(846, 515);
-            this.totalNumber.Name = "totalNumber";
-            this.totalNumber.Size = new System.Drawing.Size(19, 24);
-            this.totalNumber.TabIndex = 13;
-            this.totalNumber.Text = "0";
+            this.bebidasLista.AutoSize = true;
+            this.bebidasLista.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bebidasLista.Location = new System.Drawing.Point(846, 33);
+            this.bebidasLista.Name = "bebidasLista";
+            this.bebidasLista.Size = new System.Drawing.Size(82, 24);
+            this.bebidasLista.TabIndex = 11;
+            this.bebidasLista.Text = "BEBIDAS";
+            // 
+            // platosLista
+            // 
+            this.platosLista.AutoSize = true;
+            this.platosLista.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.platosLista.Location = new System.Drawing.Point(193, 33);
+            this.platosLista.Name = "platosLista";
+            this.platosLista.Size = new System.Drawing.Size(75, 24);
+            this.platosLista.TabIndex = 10;
+            this.platosLista.Text = "PLATOS";
+            // 
+            // sacarTicketPdf
+            // 
+            this.sacarTicketPdf.Location = new System.Drawing.Point(319, 502);
+            this.sacarTicketPdf.Name = "sacarTicketPdf";
+            this.sacarTicketPdf.Size = new System.Drawing.Size(162, 54);
+            this.sacarTicketPdf.TabIndex = 9;
+            this.sacarTicketPdf.Text = "SACAR TICKET";
+            this.sacarTicketPdf.UseVisualStyleBackColor = true;
+            this.sacarTicketPdf.Click += new System.EventHandler(this.sacarTicketPdf_Click);
+            // 
+            // borrarPedido
+            // 
+            this.borrarPedido.Location = new System.Drawing.Point(118, 502);
+            this.borrarPedido.Name = "borrarPedido";
+            this.borrarPedido.Size = new System.Drawing.Size(162, 54);
+            this.borrarPedido.TabIndex = 8;
+            this.borrarPedido.Text = "BORRAR PEDIDO";
+            this.borrarPedido.UseVisualStyleBackColor = true;
+            this.borrarPedido.Click += new System.EventHandler(this.borrarPedido_Click);
             // 
             // lblMesa
             // 
@@ -156,7 +156,7 @@
 
         private System.Windows.Forms.GroupBox laburpenBox;
         private System.Windows.Forms.Button sacarTicketPdf;
-        private System.Windows.Forms.Button editarPedido;
+        private System.Windows.Forms.Button borrarPedido;
         private System.Windows.Forms.Label bebidasLista;
         private System.Windows.Forms.Label platosLista;
         private System.Windows.Forms.Label totalNumber;

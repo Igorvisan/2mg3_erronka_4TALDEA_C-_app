@@ -40,8 +40,11 @@ namespace erronka_2mg3_app.Fakturazioa
             crearFactura.crearFacturaPdf(path);
         }
 
-        private void laburpenBox_Enter(object sender, EventArgs e)
+        private void borrarPedido_Click(object sender, EventArgs e)
         {
+            fakturazioKudeaketa borrarFactura = new fakturazioKudeaketa();
+            borrarFactura.borrarPedidoGeneral();
+            this.Close();
 
         }
     }
