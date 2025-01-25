@@ -1,4 +1,5 @@
-﻿using System;
+﻿using erronka_2mg3_app.Sukaldea;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,10 @@ namespace erronka_2mg3_app
         {
             this.BackColor = Color.FromArgb(52, 90, 123);
             sukaldeUser.Text = nombreUsuario;
+
+            Sukalde_kudeaketa sukaldeKudeaketa = new Sukalde_kudeaketa();
+
+            sukaldeKudeaketa.imprimirPedidosDelDia(sukaldePlaterak);
         }
     }
 }

@@ -1,23 +1,17 @@
-﻿using erronka_2mg3_app.eskaria;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace erronka_2mg3_app.Fakturazioa
 {
     public partial class EskaeraResumen : Form
     {
+        private string nombreUsuario;
 
         string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-        public EskaeraResumen()
+        public EskaeraResumen(string userName)
         {
             InitializeComponent();
+            userName = nombreUsuario;
         }
 
         private void EskaeraResumen_Load(object sender, EventArgs e)
@@ -32,6 +26,9 @@ namespace erronka_2mg3_app.Fakturazioa
             int idMesa = (int)eskaeraGlobal.EskaeraDatua["idMesa"];
 
             numMesa.Text = idMesa.ToString();
+
+            userName.Text = nombreUsuario;
+
         }
 
         private void sacarTicketPdf_Click(object sender, EventArgs e)

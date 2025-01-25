@@ -30,7 +30,6 @@ namespace erronka_2mg3_app.plateraEskaeria
             mySessionFactory = miConfiguracion.BuildSessionFactory();
 
 
-
             using (mySession = mySessionFactory.OpenSession())
             using (var transaccion = mySession.BeginTransaction())
             {

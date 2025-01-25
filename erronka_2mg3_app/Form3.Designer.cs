@@ -30,6 +30,7 @@
         {
             this.sukaldeUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.sukaldePlaterak = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // sukaldeUser
@@ -54,11 +55,20 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "SUKALDEA";
             // 
+            // sukaldePlaterak
+            // 
+            this.sukaldePlaterak.Location = new System.Drawing.Point(158, 76);
+            this.sukaldePlaterak.Name = "sukaldePlaterak";
+            this.sukaldePlaterak.Size = new System.Drawing.Size(1112, 623);
+            this.sukaldePlaterak.TabIndex = 2;
+            this.sukaldePlaterak.TabStop = false;
+            // 
             // cocinaPantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1433, 620);
+            this.ClientSize = new System.Drawing.Size(1433, 746);
+            this.Controls.Add(this.sukaldePlaterak);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sukaldeUser);
             this.Name = "cocinaPantalla";
@@ -73,5 +83,6 @@
 
         private System.Windows.Forms.Label sukaldeUser;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox sukaldePlaterak;
     }
 }

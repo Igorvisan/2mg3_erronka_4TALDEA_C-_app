@@ -37,6 +37,7 @@
             this.borrarPedido = new System.Windows.Forms.Button();
             this.lblMesa = new System.Windows.Forms.Label();
             this.numMesa = new System.Windows.Forms.Label();
+            this.userName = new System.Windows.Forms.Label();
             this.laburpenBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,11 +135,22 @@
             this.numMesa.TabIndex = 15;
             this.numMesa.Text = "0";
             // 
+            // userName
+            // 
+            this.userName.AutoSize = true;
+            this.userName.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userName.Location = new System.Drawing.Point(1130, 9);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(158, 35);
+            this.userName.TabIndex = 16;
+            this.userName.Text = "@UserName";
+            // 
             // EskaeraResumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 774);
+            this.Controls.Add(this.userName);
             this.Controls.Add(this.numMesa);
             this.Controls.Add(this.lblMesa);
             this.Controls.Add(this.laburpenBox);
@@ -163,5 +175,6 @@
         private System.Windows.Forms.Label totalText;
         private System.Windows.Forms.Label lblMesa;
         private System.Windows.Forms.Label numMesa;
+        private System.Windows.Forms.Label userName;
     }
 }

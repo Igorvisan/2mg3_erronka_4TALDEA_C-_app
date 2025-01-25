@@ -182,7 +182,7 @@ namespace erronka_2mg3_app
 
             eskaeraKudeaketa.actualizarPedidoGlobal();
 
-            EskaeraResumen eskaeraResumen = new EskaeraResumen();   
+            EskaeraResumen eskaeraResumen = new EskaeraResumen(nombreUsuario);   
             eskaeraResumen.Show();  
             this.Hide();
         }
