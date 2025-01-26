@@ -29,5 +29,15 @@ namespace erronka_2mg3_app
 
             sukaldeKudeaketa.imprimirPedidosDelDia(sukaldePlaterak);
         }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nextButton_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

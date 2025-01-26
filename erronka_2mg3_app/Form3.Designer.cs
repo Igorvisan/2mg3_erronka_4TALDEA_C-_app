@@ -31,6 +31,7 @@
             this.sukaldeUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.sukaldePlaterak = new System.Windows.Forms.GroupBox();
+            this.nextButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // sukaldeUser
@@ -63,11 +64,22 @@
             this.sukaldePlaterak.TabIndex = 2;
             this.sukaldePlaterak.TabStop = false;
             // 
+            // nextButton
+            // 
+            this.nextButton.Location = new System.Drawing.Point(1276, 76);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(145, 63);
+            this.nextButton.TabIndex = 3;
+            this.nextButton.Text = "TERMINAR";
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click_1);
+            // 
             // cocinaPantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1433, 746);
+            this.Controls.Add(this.nextButton);
             this.Controls.Add(this.sukaldePlaterak);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sukaldeUser);
@@ -84,5 +96,6 @@
         private System.Windows.Forms.Label sukaldeUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox sukaldePlaterak;
+        private System.Windows.Forms.Button nextButton;
     }
 }

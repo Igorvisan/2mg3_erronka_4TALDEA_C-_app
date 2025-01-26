@@ -41,7 +41,10 @@ namespace erronka_2mg3_app.Fakturazioa
         {
             fakturazioKudeaketa borrarFactura = new fakturazioKudeaketa();
             borrarFactura.borrarPedidoGeneral();
+
+            nuevComanda nuevComanda = new nuevComanda(nombreUsuario);
             this.Close();
+            nuevComanda.Show();
 
         }
     }
