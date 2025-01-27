@@ -1,4 +1,5 @@
-﻿using System;
+﻿using erronka_2mg3_app.chat;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,12 @@ namespace erronka_2mg3_app
             mesaDePedido mesaPedido = new mesaDePedido(nombreUsuario);
             mesaPedido.Show();
             this.Hide();
-        } 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            chatApp newChat = new chatApp(nombreUsuario);
+            newChat.Show();
+        }
     }
 }

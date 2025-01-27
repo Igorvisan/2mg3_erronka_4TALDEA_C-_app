@@ -186,6 +186,12 @@
     <Compile Include="bigarren_platera.Designer.cs">
       <DependentUpon>bigarren_platera.cs</DependentUpon>
     </Compile>
+    <Compile Include="chat\chatApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chat\chatApp.Designer.cs">
+      <DependentUpon>chatApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="comenzarComanda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     <Compile Include="Sukaldea\Sukalde_kudeaketa.cs" />
     <EmbeddedResource Include="bigarren_platera.resx">
       <DependentUpon>bigarren_platera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chat\chatApp.resx">
+      <DependentUpon>chatApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="comenzarComanda.resx">
       <DependentUpon>comenzarComanda.cs</DependentUpon>
