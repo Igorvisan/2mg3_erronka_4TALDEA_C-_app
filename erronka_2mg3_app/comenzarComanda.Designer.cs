@@ -31,6 +31,7 @@
             this.userName = new System.Windows.Forms.Label();
             this.nuevoPedido = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userName
@@ -48,7 +49,7 @@
             // nuevoPedido
             // 
             this.nuevoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuevoPedido.Location = new System.Drawing.Point(493, 340);
+            this.nuevoPedido.Location = new System.Drawing.Point(330, 349);
             this.nuevoPedido.Name = "nuevoPedido";
             this.nuevoPedido.Size = new System.Drawing.Size(285, 79);
             this.nuevoPedido.TabIndex = 4;
@@ -68,11 +69,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(635, 349);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(285, 79);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "VER PEDIDOS";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // nuevComanda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1257, 767);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.nuevoPedido);
             this.Controls.Add(this.userName);
@@ -90,5 +104,6 @@
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.Button nuevoPedido;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

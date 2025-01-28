@@ -153,5 +153,56 @@ namespace erronka_2mg3_app.eskaria
                 }
             }
         }
+
+
+        public void listarPedidos(DataGridView listaPedidos)
+        {
+            miConfiguracion = new NHibernate.Cfg.Configuration();
+            miConfiguracion.Configure();
+            mySessionFactory = miConfiguracion.BuildSessionFactory();
+
+            using (mySession = mySessionFactory.OpenSession())
+            using (var transaccion = mySession.BeginTransaction())
+            {
+                try
+                {
+                    string hql = "FROM Eskaera e";
+
+                    var listPedidoQuery = mySession.CreateQuery(hql);
+
+                    var resultadosLista = listPedidoQuery.List<Eskaera>();
+
+                    var dataTable = new System.Data.DataTable();
+                    dataTable.Columns.Add("Id");
+                    dataTable.Columns.Add("MahaiaId");
+                    dataTable.Columns.Add("LangileId");
+                    dataTable.Columns.Add("Totala");
+                    dataTable.Columns.Add("Ordainduta");
+                    dataTable.Columns.Add("FakturaPath");
+
+                    foreach (var iten in resultadosLista)
+                    {
+                        var row = dataTable.NewRow();
+                        row["Id"] = iten.Id;
+                        row["MahaiaId"] = iten.MahaiaId.Id;
+                        row["LangileId"] = iten.LangileId.Id;
+                        row["Totala"] = iten.Totala;
+                        row["Ordainduta"] = iten.Ordainduta;
+                        row["FakturaPath"] = iten.FakturaPath;
+
+                        dataTable.Rows.Add(row);
+                    }
+
+                    listaPedidos.DataSource = dataTable;
+
+                    transaccion.Commit();
+                }
+                catch(Exception ex)
+                {
+                    transaccion.Rollback();
+                    MessageBox.Show($"No se ha podido traer la tabla de 'eskaerak': {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

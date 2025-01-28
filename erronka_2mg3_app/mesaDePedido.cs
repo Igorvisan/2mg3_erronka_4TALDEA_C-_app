@@ -36,54 +36,12 @@ namespace erronka_2mg3_app
 
             this.BackColor = Color.FromArgb(52, 90, 123);
 
-            mahaiGroup.BackColor = Color.FromArgb(217, 217, 217);
 
-            mesa1.BackColor = Color.FromArgb(118, 138, 153);
-            mesa2.BackColor = Color.FromArgb(118, 138, 153);
-            mesa3.BackColor = Color.FromArgb(118, 138, 153);
-            mesa4.BackColor = Color.FromArgb(118, 138, 153);
-            mesa5.BackColor = Color.FromArgb(118, 138, 153);
-            mesa6.BackColor = Color.FromArgb(118, 138, 153);
-            edariScreenButton.BackColor = Color.FromArgb(118, 138, 153);
+            confirmarMesa();
+
         }
 
-        private void mesa1_Click(object sender, EventArgs e)
-        {
-            string nombreMesa = mesa1.Text;
-            confirmarMesa(nombreMesa);
-        }
-
-        private void mesa2_Click(object sender, EventArgs e)
-        {
-            string nombreMesa = mesa2.Text;
-            confirmarMesa(nombreMesa);
-        }
-
-        private void mesa3_Click(object sender, EventArgs e)
-        {
-            string nombreMesa = mesa3.Text;
-            confirmarMesa(nombreMesa);
-        }
-
-        private void mesa4_Click(object sender, EventArgs e)
-        {
-            string nombreMesa = mesa4.Text;
-            confirmarMesa(nombreMesa);
-        }
-
-        private void mesa5_Click(object sender, EventArgs e)
-        {
-            string nombreMesa = mesa5.Text;
-            confirmarMesa(nombreMesa);
-        }
-
-        private void mesa6_Click(object sender, EventArgs e)
-        {
-            string nombreMesa = mesa6.Text;
-            confirmarMesa(nombreMesa);
-        }
-
-        private void confirmarMesa(string textoMesa)
+        private void confirmarMesa()
         {
             miConfiguracion = new NHibernate.Cfg.Configuration();
             miConfiguracion.Configure();
@@ -94,7 +52,99 @@ namespace erronka_2mg3_app
             {
                 try
                 {
-                    string hql = "SELECT mai.Izena FROM mahaia mai WHERE mai.Izena = :izenaParam";
+                    // Obtener todas las mesas desde la base de datos
+                    string hql = "SELECT mai.Izena, mai.Id FROM mahaia mai";
+                    var seleccion = mySession.CreateQuery(hql);
+                    var resultados = seleccion.List<object[]>();
+
+                    // Crear y configurar el FlowLayoutPanel
+                    FlowLayoutPanel panelMesas = new FlowLayoutPanel
+                    {
+                        FlowDirection = FlowDirection.LeftToRight,
+                        WrapContents = true,
+                        AutoSize = false,
+                        Width = 800, // Tamaño fijo del ancho del panel
+                        Height = 300, // Tamaño fijo de la altura del panel
+                        Padding = new Padding(10), // Espaciado interno
+                        Margin = new Padding(20), // Espaciado externo
+                        BackColor = Color.LightBlue // Fondo para identificar el área
+                    };
+
+                    foreach (var resultado in resultados)
+                    {
+                        string mesaNombre = (string)resultado[0];
+                        int mesaId = (int)resultado[1];
+
+                        Button btn = new Button
+                        {
+                            Text = mesaNombre,
+                            Width = 120, // Ajustar el tamaño del botón
+                            Height = 60,
+                            Margin = new Padding(10), // Espaciado entre botones
+                            FlatStyle = FlatStyle.Flat // Estilo visual plano
+                        };
+
+                        btn.Click += (sender, e) =>
+                        {
+                            // Acción cuando se presiona el botón
+                            if (!eskaeraGlobal.EskaeraDatua.ContainsKey("idMesa"))
+                            {
+                                eskaeraGlobal.EskaeraDatua.Add("idMesa", mesaId);
+                            }
+                            else
+                            {
+                                eskaeraGlobal.EskaeraDatua["idMesa"] = mesaId;
+                            }
+                            MessageBox.Show($"Has escogido la mesa: {mesaNombre} con ID {mesaId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        };
+
+                        panelMesas.Controls.Add(btn);
+                    }
+
+                    // Centrar el panel en el formulario
+                    panelMesas.Location = new Point(
+                        (this.ClientSize.Width - panelMesas.Width) / 2,
+                        (this.ClientSize.Height - panelMesas.Height) / 2
+                    );
+
+                    // Escuchar el evento Resize para mantenerlo centrado
+                    this.Resize += (s, e) =>
+                    {
+                        panelMesas.Location = new Point(
+                            (this.ClientSize.Width - panelMesas.Width) / 2,
+                            (this.ClientSize.Height - panelMesas.Height) / 2
+                        );
+                    };
+
+                    // Agregar el FlowLayoutPanel al formulario
+                    this.Controls.Add(panelMesas);
+
+                    transaccion.Commit();
+                    MessageBox.Show($"Se han generado {resultados.Count} botones para las mesas.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    transaccion.Rollback();
+                    MessageBox.Show($"Ha ocurrido un error durante la operación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+
+
+        /*private void confirmarMesa(string textoMesa)
+        {
+            miConfiguracion = new NHibernate.Cfg.Configuration();
+            miConfiguracion.Configure();
+            mySessionFactory = miConfiguracion.BuildSessionFactory();
+            mySession = mySessionFactory.OpenSession();
+
+            using (var transaccion = mySession.BeginTransaction())
+            {
+                try
+                {
+                    string hql = "SELECT mai.Izena, FROM mahaia mai WHERE mai.Izena = :izenaParam";
 
                     var seleccion = mySession.CreateQuery(hql);
 
@@ -134,7 +184,7 @@ namespace erronka_2mg3_app
                     MessageBox.Show($"Ha ocurrido un error durante la operacion: {ex.Message}", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
+        }*/
 
         private void edariScreenButton_Click(object sender, EventArgs e)
         {
@@ -183,6 +233,14 @@ namespace erronka_2mg3_app
                     MessageBox.Show($"Ha ocurrido un error durante la operacion: {ex.Message}", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void select_Click(object sender, EventArgs e)
+        {
+            confirmarElPedidoMesa();
+            tpvPantaila bebidas = new tpvPantaila(nombreUsuario);
+            bebidas.Show();
+            this.Hide();
         }
     }
 }

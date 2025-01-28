@@ -1,4 +1,5 @@
 ﻿using erronka_2mg3_app.chat;
+using erronka_2mg3_app.eskaria;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,13 @@ namespace erronka_2mg3_app
         {
             chatApp newChat = new chatApp(nombreUsuario);
             newChat.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            eskaerLista listaPedidos = new eskaerLista(nombreUsuario);
+            listaPedidos.Show();
+            this.Hide();
         }
     }
 }

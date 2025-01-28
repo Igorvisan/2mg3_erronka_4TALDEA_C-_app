@@ -40,6 +40,33 @@ namespace erronka_2mg3_app
             pasahitzaText.PasswordChar = '*';
         }
 
+        /*private void HasiSaioa_Resize(object sender, EventArgs e)
+        {
+            // Centrar el cuadro de texto del email
+            emailText.Location = new Point(
+                (this.ClientSize.Width - emailText.Width) / 2, // Centrar horizontalmente
+                (this.ClientSize.Height / 2) - 60 // Ajustar verticalmente (puedes moverlo hacia arriba o abajo)
+            );
+
+            // Centrar el cuadro de texto de la contraseña
+            pasahitzaText.Location = new Point(
+                (this.ClientSize.Width - pasahitzaText.Width) / 2,
+                (this.ClientSize.Height / 2) - 20
+            );
+
+            // Centrar el botón de iniciar sesión
+            logInButton.Location = new Point(
+                (this.ClientSize.Width - logInButton.Width) / 2,
+                (this.ClientSize.Height / 2) + 30
+            );
+
+            // Centrar la imagen de perfil (opcional)
+            profilePicture.Location = new Point(
+                (this.ClientSize.Width - profilePicture.Width) / 2,
+                50 // Ajustar para que esté arriba
+            );
+        }*/
+
         private void logInButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(emailText.Text) || string.IsNullOrWhiteSpace(pasahitzaText.Text)) { 
@@ -154,5 +181,8 @@ namespace erronka_2mg3_app
                 }
             }
         }
+
+
+
     }
 }

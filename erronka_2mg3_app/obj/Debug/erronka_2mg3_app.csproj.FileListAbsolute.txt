@@ -112,3 +112,5 @@ C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg
 C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\bin\Debug\BouncyCastle.Crypto.xml
 C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\bin\Debug\itext.bouncy-castle-adapter.xml
 C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\obj\Debug\erronka_2mg3_app.chat.chatApp.resources
+C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\bin\Debug\produkto\produktua.hbm.xml
+C:\GOIERRI\archivos_clase\erronka\c#_app\2mg3_erronka_4TALDEA_C-_app\erronka_2mg3_app\obj\Debug\erronka_2mg3_app.eskaria.eskaerLista.resources
