@@ -33,6 +33,7 @@ namespace erronka_2mg3_app.eskaria
                     int idEskaeraGlobal = (int)eskaeraGlobal.EskaeraDatua["idEskaera"];
                     double prezioPlatoMaximo = (double)eskaeraGlobal.EskaeraDatua["prezioPlatoMaximo"];
                     double prezioEdariMaximo = (double)eskaeraGlobal.EskaeraDatua["prezioEdariMaximo"];
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
                     if (prezioPlatoMaximo <= 0 || prezioEdariMaximo <= 0)
                     {
@@ -43,6 +44,9 @@ namespace erronka_2mg3_app.eskaria
 
                     var r = mySession.Get<erronka_2mg3_app.eskaria.Eskaera>(idEskaeraGlobal);
                     r.Totala = prezioTotalEskaera;
+                    r.Ordainduta = true; // Actualiza la columna Ordainduta a true
+                    r.FakturaPath = path;
+                    mySession.Update(r);
                     mySession.Update(r);
                     mySession.Flush();
                     mySession.Clear();
