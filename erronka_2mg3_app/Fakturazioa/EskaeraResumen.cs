@@ -35,6 +35,10 @@ namespace erronka_2mg3_app.Fakturazioa
         {
             fakturazioKudeaketa crearFactura = new fakturazioKudeaketa();
             crearFactura.crearFacturaPdf(path);
+
+            nuevComanda nuevaComanda = new nuevComanda(nombreUsuario);
+            nuevaComanda.Show();
+            this.Hide();
         }
 
         private void borrarPedido_Click(object sender, EventArgs e)

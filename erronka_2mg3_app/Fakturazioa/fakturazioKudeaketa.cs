@@ -363,6 +363,11 @@ namespace erronka_2mg3_app.Fakturazioa
                     doc.Add(precioTotal);
 
                     doc.Close();
+
+                    var firstKey = eskaeraGlobal.EskaeraDatua.Keys.First();
+                    var firstValue = eskaeraGlobal.EskaeraDatua[firstKey];
+                    eskaeraGlobal.EskaeraDatua.Clear();
+                    eskaeraGlobal.EskaeraDatua[firstKey] = firstValue;
                 }
             }
         }
