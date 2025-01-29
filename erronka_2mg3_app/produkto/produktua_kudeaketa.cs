@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using erronka_2mg3_app.edaria;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,7 +66,7 @@ namespace erronka_2mg3_app.produkto
             }
         }
 
-        public void gehituProduktua(string produktuaKudeaketa, int kantidad)
+        public void gehituProduktua(string produktuGehituText, int kantitatea)
         {
             miConfiguracion = new NHibernate.Cfg.Configuration();
             miConfiguracion.Configure();
@@ -76,12 +77,77 @@ namespace erronka_2mg3_app.produkto
             {
                 try
                 {
+                    if(string.IsNullOrEmpty(produktuGehituText) || kantitatea == 0)
+                    {
+                        MessageBox.Show("Debe rellenar ambos campos poara la insercion");
+                        return;
+                    }
+
+                    var produktuaGehitu = new produktua
+                    {
+                        Izena = produktuGehituText,
+                        Egoera = "perfecto",
+                        GutxienezkoKantitatea = 20,
+                        OraingoKantitatea = kantitatea,
+                        GehienezkoKantitatea = 100
+                    };
+
+                    mySession.Save(produktuaGehitu);
+                    mySession.Flush();
+                    mySession.Clear();
+                    transaccion.Commit();
 
                 }
                 catch (Exception ex) 
                 {
                     transaccion.Rollback();
                     MessageBox.Show($"Ha ocurrido un error al añadir el producto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        public void comboBoxProducts(ComboBox listProductos)
+        {
+            miConfiguracion = new NHibernate.Cfg.Configuration();
+            miConfiguracion.Configure();
+            mySessionFactory = miConfiguracion.BuildSessionFactory();
+
+            using (mySession = mySessionFactory.OpenSession())
+            using (var transaccion = mySession.BeginTransaction())
+            {
+                try
+                {
+                    // HQL query to get all products from "platera" and "edaria"
+                    string hqlQueryPlatera = "FROM platera pl";
+                    string hqlQueryEdaria = "FROM Edaria ed";
+
+                    var queryPlatera = mySession.CreateQuery(hqlQueryPlatera);
+                    var queryEdaria = mySession.CreateQuery(hqlQueryEdaria);
+
+                    var resultadosPlatera = queryPlatera.List<platera.platera>();
+                    var resultadosEdaria = queryEdaria.List<Edaria>();
+
+                    // Clear existing items
+                    listProductos.Items.Clear();
+
+                    // Add items from "platera"
+                    foreach (var item in resultadosPlatera)
+                    {
+                        listProductos.Items.Add(item.Izena);
+                    }
+
+                    // Add items from "edaria"
+                    foreach (var item in resultadosEdaria)
+                    {
+                        listProductos.Items.Add(item.Izena);
+                    }
+
+                    transaccion.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaccion.Rollback();
+                    MessageBox.Show($"No se ha podido realizar la operación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

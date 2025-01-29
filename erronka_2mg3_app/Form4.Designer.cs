@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataTableProduct = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtProduktuaGehitu = new System.Windows.Forms.TextBox();
             this.gehituBotoia = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtKantitatea = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.productsCombo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableProduct)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,37 +81,31 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "ACTUALIZAR";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // txtProduktuaGehitu
-            // 
-            this.txtProduktuaGehitu.Location = new System.Drawing.Point(229, 657);
-            this.txtProduktuaGehitu.Multiline = true;
-            this.txtProduktuaGehitu.Name = "txtProduktuaGehitu";
-            this.txtProduktuaGehitu.Size = new System.Drawing.Size(531, 46);
-            this.txtProduktuaGehitu.TabIndex = 4;
-            this.txtProduktuaGehitu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // gehituBotoia
             // 
-            this.gehituBotoia.Location = new System.Drawing.Point(1007, 657);
+            this.gehituBotoia.Location = new System.Drawing.Point(604, 646);
             this.gehituBotoia.Name = "gehituBotoia";
             this.gehituBotoia.Size = new System.Drawing.Size(179, 46);
             this.gehituBotoia.TabIndex = 5;
             this.gehituBotoia.Text = "AÑADIR";
             this.gehituBotoia.UseVisualStyleBackColor = true;
+            this.gehituBotoia.Click += new System.EventHandler(this.gehituBotoia_Click);
             // 
-            // textBox1
+            // txtKantitatea
             // 
-            this.textBox1.Location = new System.Drawing.Point(796, 657);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 46);
-            this.textBox1.TabIndex = 6;
+            this.txtKantitatea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKantitatea.Location = new System.Drawing.Point(225, 646);
+            this.txtKantitatea.Multiline = true;
+            this.txtKantitatea.Name = "txtKantitatea";
+            this.txtKantitatea.Size = new System.Drawing.Size(226, 46);
+            this.txtKantitatea.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(442, 706);
+            this.label2.Location = new System.Drawing.Point(559, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 16);
             this.label2.TabIndex = 7;
@@ -128,23 +122,32 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(852, 706);
+            this.label4.Location = new System.Drawing.Point(303, 695);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "Cantidad";
+            // 
+            // productsCombo
+            // 
+            this.productsCombo.FormattingEnabled = true;
+            this.productsCombo.Location = new System.Drawing.Point(225, 75);
+            this.productsCombo.Name = "productsCombo";
+            this.productsCombo.Size = new System.Drawing.Size(328, 24);
+            this.productsCombo.TabIndex = 10;
+            this.productsCombo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // adminPantalla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1429, 749);
+            this.Controls.Add(this.productsCombo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtKantitatea);
             this.Controls.Add(this.gehituBotoia);
-            this.Controls.Add(this.txtProduktuaGehitu);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataTableProduct);
             this.Controls.Add(this.label1);
@@ -164,11 +167,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataTableProduct;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtProduktuaGehitu;
         private System.Windows.Forms.Button gehituBotoia;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtKantitatea;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox productsCombo;
     }
 }

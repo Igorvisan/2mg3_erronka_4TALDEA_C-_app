@@ -39,6 +39,9 @@ namespace erronka_2mg3_app
 
             kudeaketaProduktua.ListarProductos(dataTableProduct);
 
+            kudeaketaProduktua.comboBoxProducts(productsCombo);
+
+
         }
 
         public void startTimer()
@@ -50,6 +53,26 @@ namespace erronka_2mg3_app
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gehituBotoia_Click(object sender, EventArgs e)
+        {
+            produktua_kudeaketa añadirProduct = new produktua_kudeaketa();
+            int kantitatea = Convert.ToInt32(txtKantitatea.Text);
+            añadirProduct.gehituProduktua(productsCombo.Text, kantitatea);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           kudeaketaProduktua.ListarProductos(dataTableProduct);
+
+            txtKantitatea.Clear();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
