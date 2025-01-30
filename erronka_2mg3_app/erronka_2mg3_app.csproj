@@ -255,7 +255,7 @@
     <Compile Include="mesaDePedido.Designer.cs">
       <DependentUpon>mesaDePedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="plateraEskaeria\PlateraEskaera_kudeaketa.cs" />
+    <Compile Include="plateraEskaeria\PlateraEskaeraKudeaketa.cs" />
     <Compile Include="plateraEskaeria\plateraEskaria.cs" />
     <Compile Include="platera\platera.cs" />
     <Compile Include="postre.cs">

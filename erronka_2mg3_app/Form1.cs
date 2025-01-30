@@ -25,47 +25,46 @@ namespace erronka_2mg3_app
         private void hasiSaioa_Load(object sender, EventArgs e)
         {
             logInButton.BackColor = Color.FromArgb(118, 138, 153);
-
             this.BackColor = Color.FromArgb(52, 90, 123);
-            
             profilePicture.SizeMode = PictureBoxSizeMode.StretchImage;
 
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             gp.AddEllipse(0, 0, profilePicture.Width, profilePicture.Height);
             Region rg = new Region(gp);
             profilePicture.Region = rg;
-
             logoPicture.SizeMode = PictureBoxSizeMode.StretchImage;
-
             pasahitzaText.PasswordChar = '*';
+            this.WindowState = FormWindowState.Maximized;
+            HasiSaioa_Resize(this, EventArgs.Empty); // Llamar al método Resize al cargar
         }
 
-        /*private void HasiSaioa_Resize(object sender, EventArgs e)
+        private void HasiSaioa_Resize(object sender, EventArgs e)
         {
-            // Centrar el cuadro de texto del email
+            // Centrar el cuadro de texto del email más abajo
             emailText.Location = new Point(
                 (this.ClientSize.Width - emailText.Width) / 2, // Centrar horizontalmente
-                (this.ClientSize.Height / 2) - 60 // Ajustar verticalmente (puedes moverlo hacia arriba o abajo)
+                (this.ClientSize.Height / 2) - 40 // Ajustar verticalmente (más abajo)
             );
 
-            // Centrar el cuadro de texto de la contraseña
+            // Centrar el cuadro de texto de la contraseña más abajo
             pasahitzaText.Location = new Point(
                 (this.ClientSize.Width - pasahitzaText.Width) / 2,
-                (this.ClientSize.Height / 2) - 20
+                (this.ClientSize.Height / 2) + 20 // Ajustar verticalmente (más abajo)
             );
 
-            // Centrar el botón de iniciar sesión
+            // Centrar el botón de iniciar sesión más abajo
             logInButton.Location = new Point(
                 (this.ClientSize.Width - logInButton.Width) / 2,
-                (this.ClientSize.Height / 2) + 30
+                (this.ClientSize.Height / 2) + 70 // Ajustar verticalmente (más abajo)
             );
 
-            // Centrar la imagen de perfil (opcional)
+            // Centrar la imagen de perfil más abajo (opcional)
             profilePicture.Location = new Point(
                 (this.ClientSize.Width - profilePicture.Width) / 2,
-                50 // Ajustar para que esté arriba
+                120 // Ajustar para que esté más abajo
             );
-        }*/
+        }
+
 
         private void logInButton_Click(object sender, EventArgs e)
         {

@@ -123,14 +123,14 @@
             this.addFourthDessert.Name = "addFourthDessert";
             this.addFourthDessert.Size = new System.Drawing.Size(112, 27);
             this.addFourthDessert.TabIndex = 25;
-            this.addFourthDessert.Text = "AÑADIR";
+            this.addFourthDessert.Text = "GEHITU";
             this.addFourthDessert.UseVisualStyleBackColor = true;
             this.addFourthDessert.Click += new System.EventHandler(this.addFourthDessert_Click);
             // 
             // lessFourthDessert
             // 
             this.lessFourthDessert.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lessFourthDessert.ForeColor = System.Drawing.Color.White;
+            this.lessFourthDessert.ForeColor = System.Drawing.Color.Black;
             this.lessFourthDessert.Location = new System.Drawing.Point(462, 254);
             this.lessFourthDessert.Name = "lessFourthDessert";
             this.lessFourthDessert.Size = new System.Drawing.Size(42, 38);
@@ -142,7 +142,7 @@
             // plusFourthDessert
             // 
             this.plusFourthDessert.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.plusFourthDessert.ForeColor = System.Drawing.Color.White;
+            this.plusFourthDessert.ForeColor = System.Drawing.Color.Black;
             this.plusFourthDessert.Location = new System.Drawing.Point(687, 254);
             this.plusFourthDessert.Name = "plusFourthDessert";
             this.plusFourthDessert.Size = new System.Drawing.Size(42, 38);
@@ -168,14 +168,14 @@
             this.addThirdDessert.Name = "addThirdDessert";
             this.addThirdDessert.Size = new System.Drawing.Size(112, 27);
             this.addThirdDessert.TabIndex = 21;
-            this.addThirdDessert.Text = "AÑADIR";
+            this.addThirdDessert.Text = "GEHITU";
             this.addThirdDessert.UseVisualStyleBackColor = true;
             this.addThirdDessert.Click += new System.EventHandler(this.addThirdDessert_Click);
             // 
             // lessThirdDessert
             // 
             this.lessThirdDessert.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lessThirdDessert.ForeColor = System.Drawing.Color.White;
+            this.lessThirdDessert.ForeColor = System.Drawing.Color.Black;
             this.lessThirdDessert.Location = new System.Drawing.Point(462, 93);
             this.lessThirdDessert.Name = "lessThirdDessert";
             this.lessThirdDessert.Size = new System.Drawing.Size(42, 38);
@@ -187,7 +187,7 @@
             // plusThirdDessert
             // 
             this.plusThirdDessert.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.plusThirdDessert.ForeColor = System.Drawing.Color.White;
+            this.plusThirdDessert.ForeColor = System.Drawing.Color.Black;
             this.plusThirdDessert.Location = new System.Drawing.Point(687, 93);
             this.plusThirdDessert.Name = "plusThirdDessert";
             this.plusThirdDessert.Size = new System.Drawing.Size(42, 38);
@@ -202,7 +202,7 @@
             this.addSecondDessert.Name = "addSecondDessert";
             this.addSecondDessert.Size = new System.Drawing.Size(112, 27);
             this.addSecondDessert.TabIndex = 18;
-            this.addSecondDessert.Text = "AÑADIR";
+            this.addSecondDessert.Text = "GEHITU";
             this.addSecondDessert.UseVisualStyleBackColor = true;
             this.addSecondDessert.Click += new System.EventHandler(this.addSecondDessert_Click);
             // 
@@ -258,7 +258,7 @@
             this.addFirstDessert.Name = "addFirstDessert";
             this.addFirstDessert.Size = new System.Drawing.Size(112, 27);
             this.addFirstDessert.TabIndex = 11;
-            this.addFirstDessert.Text = "AÑADIR";
+            this.addFirstDessert.Text = "GEHITU";
             this.addFirstDessert.UseVisualStyleBackColor = true;
             this.addFirstDessert.Click += new System.EventHandler(this.addFirstDessert_Click);
             // 
@@ -294,7 +294,7 @@
             this.finalizarButton.Name = "finalizarButton";
             this.finalizarButton.Size = new System.Drawing.Size(204, 72);
             this.finalizarButton.TabIndex = 4;
-            this.finalizarButton.Text = "FINALIZAR";
+            this.finalizarButton.Text = "AMAITU";
             this.finalizarButton.UseVisualStyleBackColor = false;
             this.finalizarButton.Click += new System.EventHandler(this.finalizarButton_Click);
             // 

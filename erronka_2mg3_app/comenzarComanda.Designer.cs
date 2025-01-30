@@ -32,6 +32,7 @@
             this.nuevoPedido = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.closeApp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userName
@@ -45,6 +46,7 @@
             this.userName.TabIndex = 3;
             this.userName.Text = "@UserName";
             this.userName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.userName.Click += new System.EventHandler(this.userName_Click);
             // 
             // nuevoPedido
             // 
@@ -53,7 +55,7 @@
             this.nuevoPedido.Name = "nuevoPedido";
             this.nuevoPedido.Size = new System.Drawing.Size(285, 79);
             this.nuevoPedido.TabIndex = 4;
-            this.nuevoPedido.Text = "HACER NUEVA COMANDA";
+            this.nuevoPedido.Text = "KOMANDA BERRIA HASI";
             this.nuevoPedido.UseVisualStyleBackColor = true;
             this.nuevoPedido.Click += new System.EventHandler(this.nuevoPedido_Click);
             // 
@@ -65,7 +67,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 53);
             this.button1.TabIndex = 5;
-            this.button1.Text = "CHAT";
+            this.button1.Text = "TXATA";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -77,15 +79,29 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(285, 79);
             this.button2.TabIndex = 6;
-            this.button2.Text = "VER PEDIDOS";
+            this.button2.Text = "IKUS ESKAERAK";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // closeApp
+            // 
+            this.closeApp.BackColor = System.Drawing.Color.Red;
+            this.closeApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeApp.ForeColor = System.Drawing.Color.White;
+            this.closeApp.Location = new System.Drawing.Point(12, 702);
+            this.closeApp.Name = "closeApp";
+            this.closeApp.Size = new System.Drawing.Size(142, 53);
+            this.closeApp.TabIndex = 7;
+            this.closeApp.Text = "ITXI APP";
+            this.closeApp.UseVisualStyleBackColor = false;
+            this.closeApp.Click += new System.EventHandler(this.closeApp_Click);
             // 
             // nuevComanda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1257, 767);
+            this.Controls.Add(this.closeApp);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.nuevoPedido);
@@ -105,5 +121,6 @@
         private System.Windows.Forms.Button nuevoPedido;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button closeApp;
     }
 }

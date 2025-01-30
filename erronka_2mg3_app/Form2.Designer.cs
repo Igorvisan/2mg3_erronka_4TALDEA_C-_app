@@ -72,6 +72,7 @@
             this.edari2 = new System.Windows.Forms.Button();
             this.edari1 = new System.Windows.Forms.Button();
             this.userNameLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.edariakBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,7 +154,7 @@
             this.addEightDrink.Name = "addEightDrink";
             this.addEightDrink.Size = new System.Drawing.Size(102, 28);
             this.addEightDrink.TabIndex = 38;
-            this.addEightDrink.Text = "AÑADIR";
+            this.addEightDrink.Text = "GEHITU";
             this.addEightDrink.UseVisualStyleBackColor = true;
             this.addEightDrink.Click += new System.EventHandler(this.addEightDrink_Click);
             // 
@@ -208,7 +209,7 @@
             this.addSixthDrink.Name = "addSixthDrink";
             this.addSixthDrink.Size = new System.Drawing.Size(102, 28);
             this.addSixthDrink.TabIndex = 33;
-            this.addSixthDrink.Text = "AÑADIR";
+            this.addSixthDrink.Text = "GEHITU";
             this.addSixthDrink.UseVisualStyleBackColor = true;
             this.addSixthDrink.Click += new System.EventHandler(this.addSixthDrink_Click);
             // 
@@ -241,7 +242,7 @@
             this.addFifthDrink.Name = "addFifthDrink";
             this.addFifthDrink.Size = new System.Drawing.Size(102, 28);
             this.addFifthDrink.TabIndex = 30;
-            this.addFifthDrink.Text = "AÑADIR";
+            this.addFifthDrink.Text = "GEHITU";
             this.addFifthDrink.UseVisualStyleBackColor = true;
             this.addFifthDrink.Click += new System.EventHandler(this.addFifthDrink_Click);
             // 
@@ -274,7 +275,7 @@
             this.addFourthDrink.Name = "addFourthDrink";
             this.addFourthDrink.Size = new System.Drawing.Size(102, 28);
             this.addFourthDrink.TabIndex = 27;
-            this.addFourthDrink.Text = "AÑADIR";
+            this.addFourthDrink.Text = "GEHITU";
             this.addFourthDrink.UseVisualStyleBackColor = true;
             this.addFourthDrink.Click += new System.EventHandler(this.addFourthDrink_Click);
             // 
@@ -318,7 +319,7 @@
             this.addSeventhDrinkButton.Name = "addSeventhDrinkButton";
             this.addSeventhDrinkButton.Size = new System.Drawing.Size(102, 28);
             this.addSeventhDrinkButton.TabIndex = 23;
-            this.addSeventhDrinkButton.Text = "AÑADIR";
+            this.addSeventhDrinkButton.Text = "GEHITU";
             this.addSeventhDrinkButton.UseVisualStyleBackColor = true;
             this.addSeventhDrinkButton.Click += new System.EventHandler(this.addSeventhDrinkButton_Click);
             // 
@@ -362,7 +363,7 @@
             this.addThridDrinkButton.Name = "addThridDrinkButton";
             this.addThridDrinkButton.Size = new System.Drawing.Size(102, 28);
             this.addThridDrinkButton.TabIndex = 19;
-            this.addThridDrinkButton.Text = "AÑADIR";
+            this.addThridDrinkButton.Text = "GEHITU";
             this.addThridDrinkButton.UseVisualStyleBackColor = true;
             this.addThridDrinkButton.Click += new System.EventHandler(this.addThridDrinkButton_Click);
             // 
@@ -407,7 +408,7 @@
             this.addSecondDrinkButton.Name = "addSecondDrinkButton";
             this.addSecondDrinkButton.Size = new System.Drawing.Size(102, 28);
             this.addSecondDrinkButton.TabIndex = 15;
-            this.addSecondDrinkButton.Text = "AÑADIR";
+            this.addSecondDrinkButton.Text = "GEHITU";
             this.addSecondDrinkButton.UseVisualStyleBackColor = true;
             this.addSecondDrinkButton.Click += new System.EventHandler(this.addSecondDrinkButton_Click);
             // 
@@ -452,7 +453,7 @@
             this.addFirstDrinkButton.Name = "addFirstDrinkButton";
             this.addFirstDrinkButton.Size = new System.Drawing.Size(102, 28);
             this.addFirstDrinkButton.TabIndex = 11;
-            this.addFirstDrinkButton.Text = "AÑADIR";
+            this.addFirstDrinkButton.Text = "GEHITU";
             this.addFirstDrinkButton.UseVisualStyleBackColor = false;
             this.addFirstDrinkButton.Click += new System.EventHandler(this.addDrinkButton_Click);
             // 
@@ -582,11 +583,24 @@
             this.userNameLabel.TabIndex = 3;
             this.userNameLabel.Text = "@userName";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(142, 53);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "CHAT";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tpvPantaila
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1404, 731);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.edariakBox);
             this.Controls.Add(this.label1);
@@ -647,5 +661,6 @@
         private System.Windows.Forms.Button lessSixthDrink;
         private System.Windows.Forms.Button plusSixthDrink;
         private System.Windows.Forms.Button addFifthDrink;
+        private System.Windows.Forms.Button button1;
     }
 }

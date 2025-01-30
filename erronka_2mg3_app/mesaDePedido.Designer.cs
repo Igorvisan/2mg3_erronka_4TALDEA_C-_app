@@ -30,6 +30,7 @@
         {
             this.userName = new System.Windows.Forms.Label();
             this.select = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userName
@@ -43,6 +44,7 @@
             this.userName.TabIndex = 4;
             this.userName.Text = "@UserName";
             this.userName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.userName.Click += new System.EventHandler(this.userName_Click);
             // 
             // select
             // 
@@ -54,11 +56,24 @@
             this.select.UseVisualStyleBackColor = true;
             this.select.Click += new System.EventHandler(this.select_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(12, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(142, 53);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "CHAT";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // mesaDePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1268, 764);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.select);
             this.Controls.Add(this.userName);
             this.Name = "mesaDePedido";
@@ -72,5 +87,6 @@
         #endregion
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.Button select;
+        private System.Windows.Forms.Button button1;
     }
 }

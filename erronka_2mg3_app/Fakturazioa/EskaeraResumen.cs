@@ -51,5 +51,6 @@ namespace erronka_2mg3_app.Fakturazioa
             nuevComanda.Show();
 
         }
+
     }
 }

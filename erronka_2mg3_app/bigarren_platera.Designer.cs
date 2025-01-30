@@ -121,7 +121,7 @@
             this.addSixthPlate.Name = "addSixthPlate";
             this.addSixthPlate.Size = new System.Drawing.Size(112, 27);
             this.addSixthPlate.TabIndex = 33;
-            this.addSixthPlate.Text = "AÑADIR";
+            this.addSixthPlate.Text = "GEHITU";
             this.addSixthPlate.UseVisualStyleBackColor = true;
             this.addSixthPlate.Click += new System.EventHandler(this.addSixthPlate_Click);
             // 
@@ -164,7 +164,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 27);
             this.button1.TabIndex = 28;
-            this.button1.Text = "AÑADIR";
+            this.button1.Text = "GEHITU";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -194,9 +194,10 @@
             // 
             this.addFourthPlate.Location = new System.Drawing.Point(577, 104);
             this.addFourthPlate.Name = "addFourthPlate";
+            this.addFourthPlate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.addFourthPlate.Size = new System.Drawing.Size(112, 27);
             this.addFourthPlate.TabIndex = 25;
-            this.addFourthPlate.Text = "AÑADIR";
+            this.addFourthPlate.Text = "GEHITU";
             this.addFourthPlate.UseVisualStyleBackColor = true;
             this.addFourthPlate.Click += new System.EventHandler(this.addFourthPlate_Click);
             // 
@@ -250,7 +251,7 @@
             this.addThirdPlate.Name = "addThirdPlate";
             this.addThirdPlate.Size = new System.Drawing.Size(112, 27);
             this.addThirdPlate.TabIndex = 20;
-            this.addThirdPlate.Text = "AÑADIR";
+            this.addThirdPlate.Text = "GEHITU";
             this.addThirdPlate.UseVisualStyleBackColor = true;
             this.addThirdPlate.Click += new System.EventHandler(this.addThirdPlate_Click);
             // 
@@ -293,7 +294,7 @@
             this.addSecondPlate.Name = "addSecondPlate";
             this.addSecondPlate.Size = new System.Drawing.Size(112, 27);
             this.addSecondPlate.TabIndex = 16;
-            this.addSecondPlate.Text = "AÑADIR";
+            this.addSecondPlate.Text = "GEHITU";
             this.addSecondPlate.UseVisualStyleBackColor = true;
             this.addSecondPlate.Click += new System.EventHandler(this.addSecondPlate_Click);
             // 
@@ -358,7 +359,7 @@
             this.addFirstPlate.Name = "addFirstPlate";
             this.addFirstPlate.Size = new System.Drawing.Size(112, 27);
             this.addFirstPlate.TabIndex = 10;
-            this.addFirstPlate.Text = "AÑADIR";
+            this.addFirstPlate.Text = "GEHITU";
             this.addFirstPlate.UseVisualStyleBackColor = true;
             this.addFirstPlate.Click += new System.EventHandler(this.addFirstPlate_Click);
             // 

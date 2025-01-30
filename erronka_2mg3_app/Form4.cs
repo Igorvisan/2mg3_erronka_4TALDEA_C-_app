@@ -22,7 +22,6 @@ namespace erronka_2mg3_app
             InitializeComponent();
             nombreUsuario = userName;
             updateTimer = new Timer();
-
         }
 
         private void UpdateTimer_Tick(object sender, EventArgs e)
@@ -40,6 +39,9 @@ namespace erronka_2mg3_app
             kudeaketaProduktua.ListarProductos(dataTableProduct);
 
             kudeaketaProduktua.comboBoxProducts(productsCombo);
+
+            this.WindowState = FormWindowState.Maximized;
+
 
         }
 
@@ -86,5 +88,7 @@ namespace erronka_2mg3_app
             int kantitatea = Convert.ToInt32(txtKantitatea.Text);
             kudeaketaProduktua.actualizarProducto(productsCombo.Text, kantitatea);
         }
+
+
     }
 }

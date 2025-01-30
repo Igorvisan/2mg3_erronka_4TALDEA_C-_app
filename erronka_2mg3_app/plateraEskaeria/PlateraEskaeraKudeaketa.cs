@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace erronka_2mg3_app.plateraEskaeria
 {
-    public class PlateraEskaera_kudeaketa
+    public class PlateraEskaeraKudeaketa
     {
         private NHibernate.Cfg.Configuration miConfiguracion;
         private ISessionFactory mySessionFactory;

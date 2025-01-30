@@ -49,7 +49,7 @@
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(125, 46);
             this.sendButton.TabIndex = 1;
-            this.sendButton.Text = "ENVIAR";
+            this.sendButton.Text = "BIDALI";
             this.sendButton.UseVisualStyleBackColor = true;
             this.sendButton.Click += new System.EventHandler(this.sendButton_Click_1);
             // 

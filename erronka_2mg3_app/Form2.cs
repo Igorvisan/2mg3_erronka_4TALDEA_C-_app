@@ -1,4 +1,5 @@
-﻿using erronka_2mg3_app.edaria;
+﻿using erronka_2mg3_app.chat;
+using erronka_2mg3_app.edaria;
 using erronka_2mg3_app.eskaria;
 using NHibernate;
 using NHibernate.Util;
@@ -323,6 +324,12 @@ namespace erronka_2mg3_app
         private void thirdDrinkCount_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            chatApp newChat = new chatApp(nombreUsuario);
+            newChat.Show();
         }
     }
 }

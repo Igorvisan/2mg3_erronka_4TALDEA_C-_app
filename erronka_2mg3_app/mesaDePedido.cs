@@ -1,4 +1,5 @@
-﻿using erronka_2mg3_app.eskaria;
+﻿using erronka_2mg3_app.chat;
+using erronka_2mg3_app.eskaria;
 using Mysqlx;
 using NHibernate;
 using NHibernate.Cfg;
@@ -24,6 +25,7 @@ namespace erronka_2mg3_app
         {
             InitializeComponent();
             nombreUsuario = userName;
+            this.Resize += new EventHandler(MesaDePedido_Resize); // Suscribirse al evento Resize
         }
 
         private NHibernate.Cfg.Configuration miConfiguracion;
@@ -38,6 +40,11 @@ namespace erronka_2mg3_app
 
 
             confirmarMesa();
+
+            this.WindowState = FormWindowState.Maximized;
+
+            // Llamar al método Resize al cargar
+            MesaDePedido_Resize(this, EventArgs.Empty);
 
         }
 
@@ -130,71 +137,15 @@ namespace erronka_2mg3_app
             }
         }
 
-
-
-
-        /*private void confirmarMesa(string textoMesa)
-        {
-            miConfiguracion = new NHibernate.Cfg.Configuration();
-            miConfiguracion.Configure();
-            mySessionFactory = miConfiguracion.BuildSessionFactory();
-            mySession = mySessionFactory.OpenSession();
-
-            using (var transaccion = mySession.BeginTransaction())
-            {
-                try
-                {
-                    string hql = "SELECT mai.Izena, FROM mahaia mai WHERE mai.Izena = :izenaParam";
-
-                    var seleccion = mySession.CreateQuery(hql);
-
-                    seleccion.SetParameter("izenaParam", textoMesa);
-
-                    var resultados = seleccion.UniqueResult<string>();
-
-                    if (resultados != null)
-                    {
-                        string idHql = "SELECT mai.Id FROM mahaia mai WHERE mai.Izena = :izenaParam";
-                        var idSeleccionado = mySession.CreateQuery(idHql);
-
-                        idSeleccionado.SetParameter("izenaParam", textoMesa);
-                        var idMesa = idSeleccionado.UniqueResult<int>();
-
-                        if (idMesa != 0)
-                        {
-                            if (eskaeraGlobal.EskaeraDatua.ContainsKey("idMesa"))
-                            {
-                                eskaeraGlobal.EskaeraDatua.Add("idMesa", idMesa);
-                            }
-                            else { 
-                                eskaeraGlobal.EskaeraDatua["idMesa"] = idMesa; 
-                            }
-                        }
-                        transaccion.Commit();
-                        MessageBox.Show($"Has escogido la: {resultados} con ID {idMesa}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se ha podido elegir esa mesa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    transaccion.Rollback();
-                    MessageBox.Show($"Ha ocurrido un error durante la operacion: {ex.Message}", " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }*/
-
         private void edariScreenButton_Click(object sender, EventArgs e)
         {
             tpvPantaila tpvPantaila = new tpvPantaila(nombreUsuario);
-            confirmarElPedidoMesa();
+            elegirMesa();
             tpvPantaila.Show();
             this.Hide();
         }
 
-        private void confirmarElPedidoMesa()
+        private void elegirMesa()
         {
             miConfiguracion = new NHibernate.Cfg.Configuration();
             miConfiguracion.Configure();
@@ -237,10 +188,48 @@ namespace erronka_2mg3_app
 
         private void select_Click(object sender, EventArgs e)
         {
-            confirmarElPedidoMesa();
+            elegirMesa();
             tpvPantaila bebidas = new tpvPantaila(nombreUsuario);
             bebidas.Show();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            chatApp newChat = new chatApp(nombreUsuario);
+            newChat.Show();
+        }
+
+        private void MesaDePedido_Resize(object sender, EventArgs e)
+        {
+            // Colocar el nombre de usuario en la parte superior derecha
+            userName.Location = new Point(
+                this.ClientSize.Width - userName.Width - 20,
+                20 // Ajustar para que esté cerca de la parte superior derecha
+            );
+
+            // Colocar el botón "SELECCIONAR" más hacia el medio
+            select.Location = new Point(
+                (this.ClientSize.Width - select.Width) / 2,
+                (this.ClientSize.Height / 2) + 150 // Ajustar verticalmente
+            );
+
+            // Colocar el FlowLayoutPanel centrado
+            foreach (Control control in this.Controls)
+            {
+                if (control is FlowLayoutPanel panelMesas)
+                {
+                    panelMesas.Location = new Point(
+                        (this.ClientSize.Width - panelMesas.Width) / 2,
+                        (this.ClientSize.Height - panelMesas.Height) / 2
+                    );
+                }
+            }
+        }
+
+        private void userName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

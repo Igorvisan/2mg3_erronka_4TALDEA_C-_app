@@ -121,7 +121,7 @@
             this.addSixthDish.Name = "addSixthDish";
             this.addSixthDish.Size = new System.Drawing.Size(112, 27);
             this.addSixthDish.TabIndex = 29;
-            this.addSixthDish.Text = "AÑADIR";
+            this.addSixthDish.Text = "GEHITU";
             this.addSixthDish.UseVisualStyleBackColor = true;
             this.addSixthDish.Click += new System.EventHandler(this.addSixthDish_Click);
             // 
@@ -151,7 +151,7 @@
             this.addFifthDish.Name = "addFifthDish";
             this.addFifthDish.Size = new System.Drawing.Size(112, 27);
             this.addFifthDish.TabIndex = 26;
-            this.addFifthDish.Text = "AÑADIR";
+            this.addFifthDish.Text = "GEHITU";
             this.addFifthDish.UseVisualStyleBackColor = true;
             this.addFifthDish.Click += new System.EventHandler(this.addFifthDish_Click);
             // 
@@ -192,7 +192,7 @@
             this.addFourthDish.Name = "addFourthDish";
             this.addFourthDish.Size = new System.Drawing.Size(112, 27);
             this.addFourthDish.TabIndex = 22;
-            this.addFourthDish.Text = "AÑADIR";
+            this.addFourthDish.Text = "GEHITU";
             this.addFourthDish.UseVisualStyleBackColor = true;
             this.addFourthDish.Click += new System.EventHandler(this.addFourthDish_Click);
             // 
@@ -233,7 +233,7 @@
             this.addThirdDish.Name = "addThirdDish";
             this.addThirdDish.Size = new System.Drawing.Size(112, 27);
             this.addThirdDish.TabIndex = 18;
-            this.addThirdDish.Text = "AÑADIR";
+            this.addThirdDish.Text = "GEHITU";
             this.addThirdDish.UseVisualStyleBackColor = true;
             this.addThirdDish.Click += new System.EventHandler(this.addThirdDish_Click);
             // 
@@ -285,7 +285,7 @@
             this.addSecondDish.Name = "addSecondDish";
             this.addSecondDish.Size = new System.Drawing.Size(112, 27);
             this.addSecondDish.TabIndex = 13;
-            this.addSecondDish.Text = "AÑADIR";
+            this.addSecondDish.Text = "GEHITU";
             this.addSecondDish.UseVisualStyleBackColor = true;
             this.addSecondDish.Click += new System.EventHandler(this.addSecondDish_Click);
             // 
@@ -326,7 +326,7 @@
             this.addFirstDish.Name = "addFirstDish";
             this.addFirstDish.Size = new System.Drawing.Size(112, 27);
             this.addFirstDish.TabIndex = 9;
-            this.addFirstDish.Text = "AÑADIR";
+            this.addFirstDish.Text = "GEHITU";
             this.addFirstDish.UseVisualStyleBackColor = true;
             this.addFirstDish.Click += new System.EventHandler(this.addFirstDish_Click);
             // 

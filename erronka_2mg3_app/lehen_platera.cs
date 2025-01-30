@@ -192,7 +192,7 @@ namespace erronka_2mg3_app
             string primerPlato = sopaPescado.Text;
             int kantitatea = Convert.ToInt32(firstDishCounter.Text);
 
-            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+            PlateraEskaeraKudeaketa plateraEskaera = new PlateraEskaeraKudeaketa();
 
             plateraEskaera.plateraEskaeraGorde();
             plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
@@ -203,7 +203,7 @@ namespace erronka_2mg3_app
             string primerPlato = alubias.Text;
             int kantitatea = Convert.ToInt32(secondDishCounter.Text);
 
-            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+            PlateraEskaeraKudeaketa plateraEskaera = new PlateraEskaeraKudeaketa();
 
             plateraEskaera.plateraEskaeraGorde();
             plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
@@ -214,7 +214,7 @@ namespace erronka_2mg3_app
             string primerPlato = ensaladaMixta.Text;
             int kantitatea = Convert.ToInt32(thirdDishCounter.Text);
 
-            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+            PlateraEskaeraKudeaketa plateraEskaera = new PlateraEskaeraKudeaketa();
 
             plateraEskaera.plateraEskaeraGorde();
             plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
@@ -225,7 +225,7 @@ namespace erronka_2mg3_app
             string primerPlato = ensaladaTemplada.Text;
             int kantitatea = Convert.ToInt32(fourthDishCounter.Text);
 
-            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+            PlateraEskaeraKudeaketa plateraEskaera = new PlateraEskaeraKudeaketa();
 
             plateraEskaera.plateraEskaeraGorde();
             plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
@@ -236,7 +236,7 @@ namespace erronka_2mg3_app
             string primerPlato = pimientoRelleno.Text;
             int kantitatea = Convert.ToInt32(fifthDishCounter.Text);
 
-            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+            PlateraEskaeraKudeaketa plateraEskaera = new PlateraEskaeraKudeaketa();
 
             plateraEskaera.plateraEskaeraGorde();
             plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
@@ -247,7 +247,7 @@ namespace erronka_2mg3_app
             string primerPlato = chorizoSidra.Text;
             int kantitatea = Convert.ToInt32(sisxthDishCounter.Text);
 
-            PlateraEskaera_kudeaketa plateraEskaera = new PlateraEskaera_kudeaketa();
+            PlateraEskaeraKudeaketa plateraEskaera = new PlateraEskaeraKudeaketa();
 
             plateraEskaera.plateraEskaeraGorde();
             plateraEskaera.plateraEskaeraEgin(kantitatea, primerPlato);
