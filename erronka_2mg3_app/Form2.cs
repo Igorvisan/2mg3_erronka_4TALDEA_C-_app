@@ -319,5 +319,10 @@ namespace erronka_2mg3_app
             edariaKudeaketa.eskariaGorde();
             edariaKudeaketa.edariEskaeraEgin(kantitatea, primeraBebida);
         }
+
+        private void thirdDrinkCount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

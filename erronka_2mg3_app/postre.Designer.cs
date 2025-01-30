@@ -110,7 +110,7 @@
             // 
             this.fourthDessertCounter.AutoSize = true;
             this.fourthDessertCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fourthDessertCounter.ForeColor = System.Drawing.Color.White;
+            this.fourthDessertCounter.ForeColor = System.Drawing.Color.Black;
             this.fourthDessertCounter.Location = new System.Drawing.Point(586, 214);
             this.fourthDessertCounter.Name = "fourthDessertCounter";
             this.fourthDessertCounter.Size = new System.Drawing.Size(26, 36);
@@ -155,7 +155,7 @@
             // 
             this.thirdDessertCounter.AutoSize = true;
             this.thirdDessertCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thirdDessertCounter.ForeColor = System.Drawing.Color.White;
+            this.thirdDessertCounter.ForeColor = System.Drawing.Color.Black;
             this.thirdDessertCounter.Location = new System.Drawing.Point(586, 54);
             this.thirdDessertCounter.Name = "thirdDessertCounter";
             this.thirdDessertCounter.Size = new System.Drawing.Size(26, 36);
@@ -210,7 +210,7 @@
             // 
             this.secondDessertCounter.AutoSize = true;
             this.secondDessertCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondDessertCounter.ForeColor = System.Drawing.Color.White;
+            this.secondDessertCounter.ForeColor = System.Drawing.Color.Black;
             this.secondDessertCounter.Location = new System.Drawing.Point(205, 215);
             this.secondDessertCounter.Name = "secondDessertCounter";
             this.secondDessertCounter.Size = new System.Drawing.Size(26, 36);
@@ -245,7 +245,7 @@
             // 
             this.firstDessertCounter.AutoSize = true;
             this.firstDessertCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstDessertCounter.ForeColor = System.Drawing.Color.White;
+            this.firstDessertCounter.ForeColor = System.Drawing.Color.Black;
             this.firstDessertCounter.Location = new System.Drawing.Point(205, 54);
             this.firstDessertCounter.Name = "firstDessertCounter";
             this.firstDessertCounter.Size = new System.Drawing.Size(26, 36);

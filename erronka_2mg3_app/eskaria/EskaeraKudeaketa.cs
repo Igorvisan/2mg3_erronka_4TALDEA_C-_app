@@ -44,9 +44,8 @@ namespace erronka_2mg3_app.eskaria
 
                     var r = mySession.Get<erronka_2mg3_app.eskaria.Eskaera>(idEskaeraGlobal);
                     r.Totala = prezioTotalEskaera;
-                    r.Ordainduta = true; // Actualiza la columna Ordainduta a true
+                    r.Ordainduta = true; 
                     r.FakturaPath = path;
-                    mySession.Update(r);
                     mySession.Update(r);
                     mySession.Flush();
                     mySession.Clear();

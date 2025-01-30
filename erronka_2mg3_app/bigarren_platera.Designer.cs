@@ -108,7 +108,7 @@
             // 
             this.sixthPlateCounter.AutoSize = true;
             this.sixthPlateCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sixthPlateCounter.ForeColor = System.Drawing.Color.White;
+            this.sixthPlateCounter.ForeColor = System.Drawing.Color.Black;
             this.sixthPlateCounter.Location = new System.Drawing.Point(618, 279);
             this.sixthPlateCounter.Name = "sixthPlateCounter";
             this.sixthPlateCounter.Size = new System.Drawing.Size(26, 36);
@@ -127,7 +127,7 @@
             // 
             // lessSixthPlate
             // 
-            this.lessSixthPlate.ForeColor = System.Drawing.Color.White;
+            this.lessSixthPlate.ForeColor = System.Drawing.Color.Black;
             this.lessSixthPlate.Location = new System.Drawing.Point(498, 318);
             this.lessSixthPlate.Name = "lessSixthPlate";
             this.lessSixthPlate.Size = new System.Drawing.Size(39, 38);
@@ -138,7 +138,7 @@
             // 
             // plusSixthPlate
             // 
-            this.plusSixthPlate.ForeColor = System.Drawing.Color.White;
+            this.plusSixthPlate.ForeColor = System.Drawing.Color.Black;
             this.plusSixthPlate.Location = new System.Drawing.Point(720, 318);
             this.plusSixthPlate.Name = "plusSixthPlate";
             this.plusSixthPlate.Size = new System.Drawing.Size(39, 38);
@@ -151,7 +151,7 @@
             // 
             this.fifthPlateCounter.AutoSize = true;
             this.fifthPlateCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fifthPlateCounter.ForeColor = System.Drawing.Color.White;
+            this.fifthPlateCounter.ForeColor = System.Drawing.Color.Black;
             this.fifthPlateCounter.Location = new System.Drawing.Point(618, 147);
             this.fifthPlateCounter.Name = "fifthPlateCounter";
             this.fifthPlateCounter.Size = new System.Drawing.Size(26, 36);
@@ -170,7 +170,7 @@
             // 
             // lessFifthPlate
             // 
-            this.lessFifthPlate.ForeColor = System.Drawing.Color.White;
+            this.lessFifthPlate.ForeColor = System.Drawing.Color.Black;
             this.lessFifthPlate.Location = new System.Drawing.Point(498, 186);
             this.lessFifthPlate.Name = "lessFifthPlate";
             this.lessFifthPlate.Size = new System.Drawing.Size(39, 38);
@@ -181,7 +181,7 @@
             // 
             // plusFifthPlate
             // 
-            this.plusFifthPlate.ForeColor = System.Drawing.Color.White;
+            this.plusFifthPlate.ForeColor = System.Drawing.Color.Black;
             this.plusFifthPlate.Location = new System.Drawing.Point(720, 186);
             this.plusFifthPlate.Name = "plusFifthPlate";
             this.plusFifthPlate.Size = new System.Drawing.Size(39, 38);
@@ -204,7 +204,7 @@
             // 
             this.fouthPlateCounter.AutoSize = true;
             this.fouthPlateCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fouthPlateCounter.ForeColor = System.Drawing.Color.White;
+            this.fouthPlateCounter.ForeColor = System.Drawing.Color.Black;
             this.fouthPlateCounter.Location = new System.Drawing.Point(618, 21);
             this.fouthPlateCounter.Name = "fouthPlateCounter";
             this.fouthPlateCounter.Size = new System.Drawing.Size(26, 36);
@@ -213,7 +213,7 @@
             // 
             // lessFourthPlate
             // 
-            this.lessFourthPlate.ForeColor = System.Drawing.Color.White;
+            this.lessFourthPlate.ForeColor = System.Drawing.Color.Black;
             this.lessFourthPlate.Location = new System.Drawing.Point(498, 60);
             this.lessFourthPlate.Name = "lessFourthPlate";
             this.lessFourthPlate.Size = new System.Drawing.Size(39, 38);
@@ -224,7 +224,7 @@
             // 
             // plusFourthPlate
             // 
-            this.plusFourthPlate.ForeColor = System.Drawing.Color.White;
+            this.plusFourthPlate.ForeColor = System.Drawing.Color.Black;
             this.plusFourthPlate.Location = new System.Drawing.Point(720, 60);
             this.plusFourthPlate.Name = "plusFourthPlate";
             this.plusFourthPlate.Size = new System.Drawing.Size(39, 38);
@@ -237,7 +237,7 @@
             // 
             this.thirdPlateCounter.AutoSize = true;
             this.thirdPlateCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thirdPlateCounter.ForeColor = System.Drawing.Color.White;
+            this.thirdPlateCounter.ForeColor = System.Drawing.Color.Black;
             this.thirdPlateCounter.Location = new System.Drawing.Point(212, 279);
             this.thirdPlateCounter.Name = "thirdPlateCounter";
             this.thirdPlateCounter.Size = new System.Drawing.Size(26, 36);
@@ -256,7 +256,7 @@
             // 
             // lessThridPlate
             // 
-            this.lessThridPlate.ForeColor = System.Drawing.Color.White;
+            this.lessThridPlate.ForeColor = System.Drawing.Color.Black;
             this.lessThridPlate.Location = new System.Drawing.Point(90, 318);
             this.lessThridPlate.Name = "lessThridPlate";
             this.lessThridPlate.Size = new System.Drawing.Size(39, 38);
@@ -267,7 +267,7 @@
             // 
             // plusThridPlate
             // 
-            this.plusThridPlate.ForeColor = System.Drawing.Color.White;
+            this.plusThridPlate.ForeColor = System.Drawing.Color.Black;
             this.plusThridPlate.Location = new System.Drawing.Point(312, 318);
             this.plusThridPlate.Name = "plusThridPlate";
             this.plusThridPlate.Size = new System.Drawing.Size(39, 38);
@@ -280,7 +280,7 @@
             // 
             this.secondPlateCounter.AutoSize = true;
             this.secondPlateCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondPlateCounter.ForeColor = System.Drawing.Color.White;
+            this.secondPlateCounter.ForeColor = System.Drawing.Color.Black;
             this.secondPlateCounter.Location = new System.Drawing.Point(212, 147);
             this.secondPlateCounter.Name = "secondPlateCounter";
             this.secondPlateCounter.Size = new System.Drawing.Size(26, 36);
@@ -299,7 +299,7 @@
             // 
             // lessSecondPlate
             // 
-            this.lessSecondPlate.ForeColor = System.Drawing.Color.White;
+            this.lessSecondPlate.ForeColor = System.Drawing.Color.Black;
             this.lessSecondPlate.Location = new System.Drawing.Point(90, 186);
             this.lessSecondPlate.Name = "lessSecondPlate";
             this.lessSecondPlate.Size = new System.Drawing.Size(39, 38);
@@ -310,7 +310,7 @@
             // 
             // plusSecondPlate
             // 
-            this.plusSecondPlate.ForeColor = System.Drawing.Color.White;
+            this.plusSecondPlate.ForeColor = System.Drawing.Color.Black;
             this.plusSecondPlate.Location = new System.Drawing.Point(312, 186);
             this.plusSecondPlate.Name = "plusSecondPlate";
             this.plusSecondPlate.Size = new System.Drawing.Size(39, 38);
@@ -323,7 +323,7 @@
             // 
             this.firstPlateCounter.AutoSize = true;
             this.firstPlateCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstPlateCounter.ForeColor = System.Drawing.Color.White;
+            this.firstPlateCounter.ForeColor = System.Drawing.Color.Black;
             this.firstPlateCounter.Location = new System.Drawing.Point(212, 21);
             this.firstPlateCounter.Name = "firstPlateCounter";
             this.firstPlateCounter.Size = new System.Drawing.Size(26, 36);
@@ -332,7 +332,7 @@
             // 
             // lessFirstPlate
             // 
-            this.lessFirstPlate.ForeColor = System.Drawing.Color.White;
+            this.lessFirstPlate.ForeColor = System.Drawing.Color.Black;
             this.lessFirstPlate.Location = new System.Drawing.Point(90, 60);
             this.lessFirstPlate.Name = "lessFirstPlate";
             this.lessFirstPlate.Size = new System.Drawing.Size(39, 38);
@@ -343,7 +343,7 @@
             // 
             // plusFirstPlate
             // 
-            this.plusFirstPlate.ForeColor = System.Drawing.Color.White;
+            this.plusFirstPlate.ForeColor = System.Drawing.Color.Black;
             this.plusFirstPlate.Location = new System.Drawing.Point(312, 60);
             this.plusFirstPlate.Name = "plusFirstPlate";
             this.plusFirstPlate.Size = new System.Drawing.Size(39, 38);

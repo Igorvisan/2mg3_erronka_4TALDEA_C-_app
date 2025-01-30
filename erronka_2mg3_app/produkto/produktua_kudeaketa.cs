@@ -15,54 +15,54 @@ namespace erronka_2mg3_app.produkto
         private ISessionFactory mySessionFactory;
         private ISession mySession;
     
-
             public void ListarProductos(DataGridView tablaProductos)
             {
                 miConfiguracion = new NHibernate.Cfg.Configuration();
                 miConfiguracion.Configure();
                 mySessionFactory = miConfiguracion.BuildSessionFactory();
 
-                using (mySession = mySessionFactory.OpenSession())
-                using (var transaccion = mySession.BeginTransaction())
+            using (mySession = mySessionFactory.OpenSession())
+            using (var transaccion = mySession.BeginTransaction())
+            {
+                try
                 {
-                    try
+                    // HQL query to get all products
+                    string hqlQuery = "FROM produktua";
+                    var queryProduct = mySession.CreateQuery(hqlQuery);
+
+                    var resultados = queryProduct.List<produktua>();
+
+                    var dataTable = new System.Data.DataTable();
+                    dataTable.Columns.Add("Id");
+                    dataTable.Columns.Add("Izena");
+                    dataTable.Columns.Add("Egoera");
+                    dataTable.Columns.Add("GutxienezkoKantitatea");
+                    dataTable.Columns.Add("OraingoKantitatea");
+                    dataTable.Columns.Add("GehienezkoKantitatea");
+
+                    foreach (var item in resultados)
                     {
-                        // HQL query to get all products
-                        string hqlQuery = "FROM produktua";
-                        var queryProduct = mySession.CreateQuery(hqlQuery);
+                        var row = dataTable.NewRow();
+                        row["Id"] = item.Id;
+                        row["Izena"] = item.Izena;
+                        row["Egoera"] = item.Egoera;
+                        row["GutxienezkoKantitatea"] = item.GutxienezkoKantitatea;
+                        row["OraingoKantitatea"] = item.OraingoKantitatea;
+                        row["GehienezkoKantitatea"] = item.GehienezkoKantitatea;
 
-                        var resultados = queryProduct.List<produktua>();
-
-                        var dataTable = new System.Data.DataTable();
-                        dataTable.Columns.Add("Id");
-                        dataTable.Columns.Add("Izena");
-                        dataTable.Columns.Add("Egoera");
-                        dataTable.Columns.Add("GutxienezkoKantitatea");
-                        dataTable.Columns.Add("OraingoKantitatea");
-                        dataTable.Columns.Add("GehienezkoKantitatea");
-
-                        foreach (var item in resultados)
-                        {
-                            var row = dataTable.NewRow();
-                            row["Id"] = item.Id;
-                            row["Izena"] = item.Izena;
-                            row["Egoera"] = item.Egoera;
-                            row["GutxienezkoKantitatea"] = item.GutxienezkoKantitatea;
-                            row["OraingoKantitatea"] = item.OraingoKantitatea;
-                            row["GehienezkoKantitatea"] = item.GehienezkoKantitatea;
-
-                            dataTable.Rows.Add(row);
-                        }
-
-                        tablaProductos.DataSource = dataTable;
-
-                        transaccion.Commit();
+                        dataTable.Rows.Add(row);
                     }
-                    catch (Exception ex)
-                    {
-                        transaccion.Rollback();
-                        MessageBox.Show($"No se ha podido realizar la operacion: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+
+                    tablaProductos.DataSource = dataTable;
+
+                    transaccion.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaccion.Rollback();
+                    MessageBox.Show($"No se ha podido realizar la operacion: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            
             }
         }
 
@@ -148,6 +148,53 @@ namespace erronka_2mg3_app.produkto
                 {
                     transaccion.Rollback();
                     MessageBox.Show($"No se ha podido realizar la operación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        public void actualizarProducto(string nombreProducto, int kantitatea)
+        {
+            miConfiguracion = new NHibernate.Cfg.Configuration();
+            miConfiguracion.Configure();
+            mySessionFactory = miConfiguracion.BuildSessionFactory();
+
+            using (mySession = mySessionFactory.OpenSession())
+            using (var transaccion = mySession.BeginTransaction())
+            {
+                try
+                {
+                    string seletcHql = "FROM produktua pr WHERE pr.Izena = :izenaParam";
+
+                    var querySelet = mySession.CreateQuery(seletcHql);
+
+                    querySelet.SetParameter("izenaParam", nombreProducto);
+
+                    var resultado = querySelet.UniqueResult<produktua>();
+
+                    if(resultado == null)
+                    {
+                        MessageBox.Show("No se han encontrado coincidencias de este producto en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    int nuevaCantidad = resultado.OraingoKantitatea + kantitatea;
+                    if(nuevaCantidad > 100)
+                    {
+                        MessageBox.Show("Ya has alacanzado la cantidad de productos maxima", "Atention", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        nuevaCantidad = 100;
+                    }
+
+                    resultado.OraingoKantitatea = nuevaCantidad;
+                    mySession.Update(resultado); //Actualiza la cantidad del producto YA registrado anteriormente
+                    mySession.Flush();
+                    mySession.Clear();
+                    transaccion.Commit();
+
+                    MessageBox.Show("Producto actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex) 
+                {
+                    transaccion.Rollback();
+                    MessageBox.Show($"No se ha podido actualizar la columna: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

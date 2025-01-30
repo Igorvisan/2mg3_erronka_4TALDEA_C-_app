@@ -139,7 +139,6 @@ namespace erronka_2mg3_app.eskaria
 
                     if (edariPrezioa <= 0 || edariKantitatea <= 0)
                     {
-
                         MessageBox.Show("No se ha podido completar la operacion: La cantidad o el precio no pueden ser menores o iguales a 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
@@ -159,10 +158,38 @@ namespace erronka_2mg3_app.eskaria
                         };
 
                         mySession.Save(edariEskaera);
-                        MessageBox.Show("El pedido se ha efectuado correctamente", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        mySession.Flush();
-                        mySession.Clear();
-                        transaccion.Commit();
+
+                        // Obtener el nombre del producto y comparar
+                        var produktua = mySession.Query<erronka_2mg3_app.produkto.produktua>()
+                                                 .FirstOrDefault(p => p.Izena == edaria.Izena);
+                        if (produktua != null)
+                        {
+                            if (produktua.OraingoKantitatea >= edariKantitatea)
+                            {
+                                if(produktua.OraingoKantitatea == 0)
+                                {
+                                    MessageBox.Show("Ya no hay mas de esta bebida", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
+                                }
+                                produktua.OraingoKantitatea -= edariKantitatea;
+                                mySession.Update(produktua);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No hay suficiente cantidad en el stock", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+                            MessageBox.Show("El pedido se ha efectuado correctamente", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            mySession.Flush();
+                            mySession.Clear();
+                            transaccion.Commit();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -173,5 +200,7 @@ namespace erronka_2mg3_app.eskaria
                 }
             }
         }
+
+
     }
 }

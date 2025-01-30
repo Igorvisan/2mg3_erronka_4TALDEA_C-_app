@@ -129,9 +129,9 @@
             this.edariakBox.Controls.Add(this.edari3);
             this.edariakBox.Controls.Add(this.edari2);
             this.edariakBox.Controls.Add(this.edari1);
-            this.edariakBox.Location = new System.Drawing.Point(191, 101);
+            this.edariakBox.Location = new System.Drawing.Point(186, 65);
             this.edariakBox.Name = "edariakBox";
-            this.edariakBox.Size = new System.Drawing.Size(912, 593);
+            this.edariakBox.Size = new System.Drawing.Size(935, 615);
             this.edariakBox.TabIndex = 2;
             this.edariakBox.TabStop = false;
             // 
@@ -139,7 +139,7 @@
             // 
             this.eightDrinkCounter.AutoSize = true;
             this.eightDrinkCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eightDrinkCounter.ForeColor = System.Drawing.Color.White;
+            this.eightDrinkCounter.ForeColor = System.Drawing.Color.Black;
             this.eightDrinkCounter.Location = new System.Drawing.Point(645, 388);
             this.eightDrinkCounter.Name = "eightDrinkCounter";
             this.eightDrinkCounter.Size = new System.Drawing.Size(26, 36);
@@ -148,6 +148,7 @@
             // 
             // addEightDrink
             // 
+            this.addEightDrink.ForeColor = System.Drawing.Color.Black;
             this.addEightDrink.Location = new System.Drawing.Point(611, 471);
             this.addEightDrink.Name = "addEightDrink";
             this.addEightDrink.Size = new System.Drawing.Size(102, 28);
@@ -158,6 +159,7 @@
             // 
             // lessEightDrink
             // 
+            this.lessEightDrink.ForeColor = System.Drawing.Color.Black;
             this.lessEightDrink.Location = new System.Drawing.Point(521, 427);
             this.lessEightDrink.Name = "lessEightDrink";
             this.lessEightDrink.Size = new System.Drawing.Size(47, 38);
@@ -168,6 +170,7 @@
             // 
             // plusEightDrink
             // 
+            this.plusEightDrink.ForeColor = System.Drawing.Color.Black;
             this.plusEightDrink.Location = new System.Drawing.Point(751, 427);
             this.plusEightDrink.Name = "plusEightDrink";
             this.plusEightDrink.Size = new System.Drawing.Size(47, 38);
@@ -180,7 +183,7 @@
             // 
             this.sisxthDrinkCounter.AutoSize = true;
             this.sisxthDrinkCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sisxthDrinkCounter.ForeColor = System.Drawing.Color.White;
+            this.sisxthDrinkCounter.ForeColor = System.Drawing.Color.Black;
             this.sisxthDrinkCounter.Location = new System.Drawing.Point(645, 267);
             this.sisxthDrinkCounter.Name = "sisxthDrinkCounter";
             this.sisxthDrinkCounter.Size = new System.Drawing.Size(26, 36);
@@ -191,7 +194,7 @@
             // 
             this.fifthDrinkCounter.AutoSize = true;
             this.fifthDrinkCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fifthDrinkCounter.ForeColor = System.Drawing.Color.White;
+            this.fifthDrinkCounter.ForeColor = System.Drawing.Color.Black;
             this.fifthDrinkCounter.Location = new System.Drawing.Point(645, 143);
             this.fifthDrinkCounter.Name = "fifthDrinkCounter";
             this.fifthDrinkCounter.Size = new System.Drawing.Size(26, 36);
@@ -200,6 +203,7 @@
             // 
             // addSixthDrink
             // 
+            this.addSixthDrink.ForeColor = System.Drawing.Color.Black;
             this.addSixthDrink.Location = new System.Drawing.Point(611, 350);
             this.addSixthDrink.Name = "addSixthDrink";
             this.addSixthDrink.Size = new System.Drawing.Size(102, 28);
@@ -210,6 +214,7 @@
             // 
             // lessSixthDrink
             // 
+            this.lessSixthDrink.ForeColor = System.Drawing.Color.Black;
             this.lessSixthDrink.Location = new System.Drawing.Point(521, 306);
             this.lessSixthDrink.Name = "lessSixthDrink";
             this.lessSixthDrink.Size = new System.Drawing.Size(47, 38);
@@ -220,6 +225,7 @@
             // 
             // plusSixthDrink
             // 
+            this.plusSixthDrink.ForeColor = System.Drawing.Color.Black;
             this.plusSixthDrink.Location = new System.Drawing.Point(751, 306);
             this.plusSixthDrink.Name = "plusSixthDrink";
             this.plusSixthDrink.Size = new System.Drawing.Size(47, 38);
@@ -230,6 +236,7 @@
             // 
             // addFifthDrink
             // 
+            this.addFifthDrink.ForeColor = System.Drawing.Color.Black;
             this.addFifthDrink.Location = new System.Drawing.Point(611, 226);
             this.addFifthDrink.Name = "addFifthDrink";
             this.addFifthDrink.Size = new System.Drawing.Size(102, 28);
@@ -240,6 +247,7 @@
             // 
             // lessFifthDrink
             // 
+            this.lessFifthDrink.ForeColor = System.Drawing.Color.Black;
             this.lessFifthDrink.Location = new System.Drawing.Point(521, 182);
             this.lessFifthDrink.Name = "lessFifthDrink";
             this.lessFifthDrink.Size = new System.Drawing.Size(47, 38);
@@ -250,6 +258,7 @@
             // 
             // plusFifthDrink
             // 
+            this.plusFifthDrink.ForeColor = System.Drawing.Color.Black;
             this.plusFifthDrink.Location = new System.Drawing.Point(751, 182);
             this.plusFifthDrink.Name = "plusFifthDrink";
             this.plusFifthDrink.Size = new System.Drawing.Size(47, 38);
@@ -260,6 +269,7 @@
             // 
             // addFourthDrink
             // 
+            this.addFourthDrink.ForeColor = System.Drawing.Color.Black;
             this.addFourthDrink.Location = new System.Drawing.Point(611, 106);
             this.addFourthDrink.Name = "addFourthDrink";
             this.addFourthDrink.Size = new System.Drawing.Size(102, 28);
@@ -272,7 +282,7 @@
             // 
             this.fourthDrinkCount.AutoSize = true;
             this.fourthDrinkCount.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fourthDrinkCount.ForeColor = System.Drawing.Color.White;
+            this.fourthDrinkCount.ForeColor = System.Drawing.Color.Black;
             this.fourthDrinkCount.Location = new System.Drawing.Point(645, 23);
             this.fourthDrinkCount.Name = "fourthDrinkCount";
             this.fourthDrinkCount.Size = new System.Drawing.Size(26, 36);
@@ -281,6 +291,7 @@
             // 
             // lessFourthButton
             // 
+            this.lessFourthButton.ForeColor = System.Drawing.Color.Black;
             this.lessFourthButton.Location = new System.Drawing.Point(521, 62);
             this.lessFourthButton.Name = "lessFourthButton";
             this.lessFourthButton.Size = new System.Drawing.Size(47, 38);
@@ -291,6 +302,7 @@
             // 
             // plusForthButton
             // 
+            this.plusForthButton.ForeColor = System.Drawing.Color.Black;
             this.plusForthButton.Location = new System.Drawing.Point(751, 62);
             this.plusForthButton.Name = "plusForthButton";
             this.plusForthButton.Size = new System.Drawing.Size(47, 38);
@@ -301,6 +313,7 @@
             // 
             // addSeventhDrinkButton
             // 
+            this.addSeventhDrinkButton.ForeColor = System.Drawing.Color.Black;
             this.addSeventhDrinkButton.Location = new System.Drawing.Point(194, 471);
             this.addSeventhDrinkButton.Name = "addSeventhDrinkButton";
             this.addSeventhDrinkButton.Size = new System.Drawing.Size(102, 28);
@@ -311,6 +324,7 @@
             // 
             // lessSeventhButton
             // 
+            this.lessSeventhButton.ForeColor = System.Drawing.Color.Black;
             this.lessSeventhButton.Location = new System.Drawing.Point(103, 427);
             this.lessSeventhButton.Name = "lessSeventhButton";
             this.lessSeventhButton.Size = new System.Drawing.Size(47, 38);
@@ -321,6 +335,7 @@
             // 
             // plusSeventhButton
             // 
+            this.plusSeventhButton.ForeColor = System.Drawing.Color.Black;
             this.plusSeventhButton.Location = new System.Drawing.Point(333, 427);
             this.plusSeventhButton.Name = "plusSeventhButton";
             this.plusSeventhButton.Size = new System.Drawing.Size(47, 38);
@@ -333,7 +348,7 @@
             // 
             this.seventhDrinkCounter.AutoSize = true;
             this.seventhDrinkCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seventhDrinkCounter.ForeColor = System.Drawing.Color.White;
+            this.seventhDrinkCounter.ForeColor = System.Drawing.Color.Black;
             this.seventhDrinkCounter.Location = new System.Drawing.Point(229, 388);
             this.seventhDrinkCounter.Name = "seventhDrinkCounter";
             this.seventhDrinkCounter.Size = new System.Drawing.Size(26, 36);
@@ -342,6 +357,7 @@
             // 
             // addThridDrinkButton
             // 
+            this.addThridDrinkButton.ForeColor = System.Drawing.Color.Black;
             this.addThridDrinkButton.Location = new System.Drawing.Point(194, 350);
             this.addThridDrinkButton.Name = "addThridDrinkButton";
             this.addThridDrinkButton.Size = new System.Drawing.Size(102, 28);
@@ -352,6 +368,7 @@
             // 
             // lessThirdButton
             // 
+            this.lessThirdButton.ForeColor = System.Drawing.Color.Black;
             this.lessThirdButton.Location = new System.Drawing.Point(103, 306);
             this.lessThirdButton.Name = "lessThirdButton";
             this.lessThirdButton.Size = new System.Drawing.Size(47, 38);
@@ -362,6 +379,7 @@
             // 
             // plusThridButton
             // 
+            this.plusThridButton.ForeColor = System.Drawing.Color.Black;
             this.plusThridButton.Location = new System.Drawing.Point(333, 306);
             this.plusThridButton.Name = "plusThridButton";
             this.plusThridButton.Size = new System.Drawing.Size(47, 38);
@@ -374,15 +392,17 @@
             // 
             this.thirdDrinkCount.AutoSize = true;
             this.thirdDrinkCount.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thirdDrinkCount.ForeColor = System.Drawing.Color.White;
+            this.thirdDrinkCount.ForeColor = System.Drawing.Color.Black;
             this.thirdDrinkCount.Location = new System.Drawing.Point(228, 267);
             this.thirdDrinkCount.Name = "thirdDrinkCount";
             this.thirdDrinkCount.Size = new System.Drawing.Size(26, 36);
             this.thirdDrinkCount.TabIndex = 16;
             this.thirdDrinkCount.Text = "0";
+            this.thirdDrinkCount.Click += new System.EventHandler(this.thirdDrinkCount_Click);
             // 
             // addSecondDrinkButton
             // 
+            this.addSecondDrinkButton.ForeColor = System.Drawing.Color.Black;
             this.addSecondDrinkButton.Location = new System.Drawing.Point(194, 226);
             this.addSecondDrinkButton.Name = "addSecondDrinkButton";
             this.addSecondDrinkButton.Size = new System.Drawing.Size(102, 28);
@@ -393,6 +413,7 @@
             // 
             // lessSecondButton
             // 
+            this.lessSecondButton.ForeColor = System.Drawing.Color.Black;
             this.lessSecondButton.Location = new System.Drawing.Point(103, 182);
             this.lessSecondButton.Name = "lessSecondButton";
             this.lessSecondButton.Size = new System.Drawing.Size(47, 38);
@@ -403,6 +424,7 @@
             // 
             // plusSecondButton
             // 
+            this.plusSecondButton.ForeColor = System.Drawing.Color.Black;
             this.plusSecondButton.Location = new System.Drawing.Point(333, 182);
             this.plusSecondButton.Name = "plusSecondButton";
             this.plusSecondButton.Size = new System.Drawing.Size(47, 38);
@@ -415,8 +437,8 @@
             // 
             this.secondDrinkCount.AutoSize = true;
             this.secondDrinkCount.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondDrinkCount.ForeColor = System.Drawing.Color.White;
-            this.secondDrinkCount.Location = new System.Drawing.Point(229, 137);
+            this.secondDrinkCount.ForeColor = System.Drawing.Color.Black;
+            this.secondDrinkCount.Location = new System.Drawing.Point(228, 143);
             this.secondDrinkCount.Name = "secondDrinkCount";
             this.secondDrinkCount.Size = new System.Drawing.Size(26, 36);
             this.secondDrinkCount.TabIndex = 12;
@@ -424,19 +446,21 @@
             // 
             // addFirstDrinkButton
             // 
+            this.addFirstDrinkButton.BackColor = System.Drawing.Color.White;
+            this.addFirstDrinkButton.ForeColor = System.Drawing.Color.Black;
             this.addFirstDrinkButton.Location = new System.Drawing.Point(194, 106);
             this.addFirstDrinkButton.Name = "addFirstDrinkButton";
             this.addFirstDrinkButton.Size = new System.Drawing.Size(102, 28);
             this.addFirstDrinkButton.TabIndex = 11;
             this.addFirstDrinkButton.Text = "AÑADIR";
-            this.addFirstDrinkButton.UseVisualStyleBackColor = true;
+            this.addFirstDrinkButton.UseVisualStyleBackColor = false;
             this.addFirstDrinkButton.Click += new System.EventHandler(this.addDrinkButton_Click);
             // 
             // firstDrinkCount
             // 
             this.firstDrinkCount.AutoSize = true;
             this.firstDrinkCount.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstDrinkCount.ForeColor = System.Drawing.Color.White;
+            this.firstDrinkCount.ForeColor = System.Drawing.Color.Black;
             this.firstDrinkCount.Location = new System.Drawing.Point(229, 23);
             this.firstDrinkCount.Name = "firstDrinkCount";
             this.firstDrinkCount.Size = new System.Drawing.Size(26, 36);
@@ -445,6 +469,7 @@
             // 
             // lessFirstButton
             // 
+            this.lessFirstButton.ForeColor = System.Drawing.Color.Black;
             this.lessFirstButton.Location = new System.Drawing.Point(103, 62);
             this.lessFirstButton.Name = "lessFirstButton";
             this.lessFirstButton.Size = new System.Drawing.Size(47, 38);
@@ -455,6 +480,7 @@
             // 
             // plusFirstButton
             // 
+            this.plusFirstButton.ForeColor = System.Drawing.Color.Black;
             this.plusFirstButton.Location = new System.Drawing.Point(333, 62);
             this.plusFirstButton.Name = "plusFirstButton";
             this.plusFirstButton.Size = new System.Drawing.Size(47, 38);

@@ -108,7 +108,7 @@
             // 
             this.sisxthDishCounter.AutoSize = true;
             this.sisxthDishCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sisxthDishCounter.ForeColor = System.Drawing.Color.White;
+            this.sisxthDishCounter.ForeColor = System.Drawing.Color.Black;
             this.sisxthDishCounter.Location = new System.Drawing.Point(696, 291);
             this.sisxthDishCounter.Name = "sisxthDishCounter";
             this.sisxthDishCounter.Size = new System.Drawing.Size(26, 36);
@@ -159,7 +159,7 @@
             // 
             this.fifthDishCounter.AutoSize = true;
             this.fifthDishCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fifthDishCounter.ForeColor = System.Drawing.Color.White;
+            this.fifthDishCounter.ForeColor = System.Drawing.Color.Black;
             this.fifthDishCounter.Location = new System.Drawing.Point(696, 163);
             this.fifthDishCounter.Name = "fifthDishCounter";
             this.fifthDishCounter.Size = new System.Drawing.Size(26, 36);
@@ -220,7 +220,7 @@
             // 
             this.fourthDishCounter.AutoSize = true;
             this.fourthDishCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fourthDishCounter.ForeColor = System.Drawing.Color.White;
+            this.fourthDishCounter.ForeColor = System.Drawing.Color.Black;
             this.fourthDishCounter.Location = new System.Drawing.Point(696, 33);
             this.fourthDishCounter.Name = "fourthDishCounter";
             this.fourthDishCounter.Size = new System.Drawing.Size(26, 36);
@@ -241,7 +241,7 @@
             // 
             this.thirdDishCounter.AutoSize = true;
             this.thirdDishCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thirdDishCounter.ForeColor = System.Drawing.Color.White;
+            this.thirdDishCounter.ForeColor = System.Drawing.Color.Black;
             this.thirdDishCounter.Location = new System.Drawing.Point(298, 291);
             this.thirdDishCounter.Name = "thirdDishCounter";
             this.thirdDishCounter.Size = new System.Drawing.Size(26, 36);
@@ -272,7 +272,7 @@
             // 
             this.secondDishCounter.AutoSize = true;
             this.secondDishCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondDishCounter.ForeColor = System.Drawing.Color.White;
+            this.secondDishCounter.ForeColor = System.Drawing.Color.Black;
             this.secondDishCounter.Location = new System.Drawing.Point(298, 163);
             this.secondDishCounter.Name = "secondDishCounter";
             this.secondDishCounter.Size = new System.Drawing.Size(26, 36);
@@ -313,7 +313,7 @@
             // 
             this.firstDishCounter.AutoSize = true;
             this.firstDishCounter.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstDishCounter.ForeColor = System.Drawing.Color.White;
+            this.firstDishCounter.ForeColor = System.Drawing.Color.Black;
             this.firstDishCounter.Location = new System.Drawing.Point(298, 33);
             this.firstDishCounter.Name = "firstDishCounter";
             this.firstDishCounter.Size = new System.Drawing.Size(26, 36);
@@ -352,6 +352,7 @@
             // 
             // sopaPescado
             // 
+            this.sopaPescado.ForeColor = System.Drawing.Color.White;
             this.sopaPescado.Location = new System.Drawing.Point(227, 72);
             this.sopaPescado.Name = "sopaPescado";
             this.sopaPescado.Size = new System.Drawing.Size(171, 38);

@@ -41,7 +41,6 @@ namespace erronka_2mg3_app
 
             kudeaketaProduktua.comboBoxProducts(productsCombo);
 
-
         }
 
         public void startTimer()
@@ -75,6 +74,17 @@ namespace erronka_2mg3_app
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void closeApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void produktuaEguneratu_Click(object sender, EventArgs e)
+        {
+            int kantitatea = Convert.ToInt32(txtKantitatea.Text);
+            kudeaketaProduktua.actualizarProducto(productsCombo.Text, kantitatea);
         }
     }
 }
